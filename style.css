@@ -61,6 +61,9 @@ body {
     align-items: center;
     text-align: center;
     padding: 0 20px;
+    background-image:url("farm animals.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
 .hero-content h1 {
@@ -141,6 +144,10 @@ body {
     font-size: 0.95rem;
 }
 
+.h1{
+    color: magenta;
+}
+
 /* Contact Section */
 .contact-section {
     padding: 80px 20px;
@@ -169,6 +176,19 @@ body {
 .contact-links a:hover {
     text-decoration: underline;
 }
+
+
+/* Arrow Container */
+
+.arrow-container {
+    display: flex;
+    flex-direction: column; /* Stacks the items vertically */
+    align-items: center;    /* Centers them horizontally */
+    gap: 20px;              /* Adjusts the vertical space between arrows */
+    font-size: 24px;        /* Adjusts the size of the arrows */
+    color: #f443ce;            /* Sets arrow color */
+}
+
 
 /* Footer */
 footer {

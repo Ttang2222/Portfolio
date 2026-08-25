@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tina Tang | Water Hardness Design Spring for Building Management</title>
+    <p>SYDE 600 - Systems Theory, Models, Research & Design</p>
+    <p>Members: Christy Cui, Gengteng Xie, Kaiyuan Zhang , Shirui Yang, Tina Tang, Yingti Zhang</p>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body>
+    <div>
+        <h1>PROBLEM IDENTIFICATION</h1>
+        <p>
+            Water hardness is a common issue in building management, affecting both the efficiency of water systems and the longevity of appliances. Hard water contains high levels of calcium and magnesium ions, which can lead to scale buildup in pipes and fixtures, reducing water flow and increasing maintenance costs. Understanding and managing water hardness is crucial for ensuring optimal performance and sustainability in building operations.
+    </div>
+    <div>
+        <h1>STAKEHOLDERS</h1>
+    </div>
+
+    <div>
+        <h1>STORYBOARDING</h1>
+        <img src="water hardness storyboarding.PNG" alt="water hardness storyboarding" width="600">
+        <p>Each member in our team had their own 9-step storyboarding process, which is laid out in Miro with three phases:
+            - Connect: Building Partnerships & Planning
+            - Treat: Optimize Chemical Water Softening
+            - Reduce: Brine & Waste Management</p>
+    </div>
+
+    <div>
+        <h1></h1>
+    </div>
+
+
+    <div>
+        <h1>DESIGN CONSIDERATIONS</h1>
+<p>System Component: Flow Rate Sensor Integration
+Primary Function
+
+The flow rate sensor continuously monitors the volumetric flow of incoming hard, unsoftened water (ground or surface water) entering the treatment system. While standard environmental sensors provide baseline metrics, the flow rate sensor serves as the primary operational safeguard for system capacity and data validation.
+
+Key Functional Roles
+
+Resin Protection & Treatment Capacity Control: Softening units operate within specific flow rate thresholds (typically 0–45 GPM). Excessively high flow rates reduce contact time with the ion-exchange resin, leading to incomplete hardness removal and premature resin exhaustion. Real-time monitoring ensures incoming volume remains within optimal treatment limits.
+
+Cross-Sensor Malfunction & Anomaly Detection: By correlating real-time volumetric data with post-treatment hardness readings (e.g., via conductivity or ion-selective sensors), the system performs automated health checks:
+
+Zero-Flow Anomaly: A zero flow rate reading paired with an active hardness reading (>15 ppm sustained for >5 minutes) flags an explicit sensor malfunction.
+
+Discrepancy Checks: Mismatched flow vs. hardness profiles highlight mechanical failures, such as stuck valves or erratic tap control of incoming hard water.
+
+Over-Saturation Risk Prevention: If flow rates remain within normal parameters (0–45 GPM) but hardness surges (>80 ppm), the system flags an insufficient sodium ion exchanger state—preventing unsoftened water from bypassing effective treatment.
+
+Data Correlation & Regional Scalability: Continuous flow volume tracking provides the empirical data required to model mathematical correlations between dynamic flow rates and hardness concentrations. This predictive telemetry is critical for scaling the IoT sensor package across multi-building infrastructure across regions (e.g., Kitchener-Waterloo area water networks).
+</p></div>
+
+<div>
+    <h1>FINAL SOLUTION</h1>
+        <p>The final solution involves the implementation of three real-time hardware sensors (brine level, conductivity, flow rate), connected through an IoT infrastrucutre to the SmartSoft prototype app. Building management or facility teams will have access to water quality measurements in-real-time.</p>
+    <img src="iot-system-architecture.PNG" alt="IoT System Architecture" width="600">
+    <h2>APP PROTOTYPE: SMARTSOFT</h2>
+    <a href="https://radiant-cupcake-6238d8.netlify.app/" target="_blank">View SmartSoft Prototype</a>
+</div>
+
+</body>
