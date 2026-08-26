@@ -93,7 +93,7 @@ The flow rate sensor continuously monitors the volumetric flow of incoming hard,
     <img src="flow rate sensor.PNG" alt="Flow Rate Sensor" width="600"></p>
     <p>The flow rate sensor measures the rate of water entering the water softener, providing information about how much water is passing through the system over time.The flow rate sensor continuously monitors the volumetric flow of incoming hard, unsoftened water (ground or surface water) entering the treatment system. While standard environmental sensors provide baseline metrics, the flow rate sensor serves as the primary operational safeguard for system capacity and data validation.
      <p>
-Two sensing approaches were considered:
+<strong>Two sensing approaches were considered:</strong>
 
 1. Turbine / Impeller Sensor with Magnetic Pickup
 An inline turbine rotates as water flows through the pipe. A magnet embedded in the turbine is detected by a Hall-effect sensor, producing electrical pulses as the turbine rotates. By counting these pulses, the system can determine the water flow rate, typically reported in L/min or m³/h.
@@ -101,11 +101,11 @@ An inline turbine rotates as water flows through the pipe. A magnet embedded in 
 2. Ultrasonic Time-of-Flight Sensor
 An ultrasonic sensor measures flow by detecting changes in the travel time of ultrasonic signals through the moving water. Unlike the turbine-based approach, the sensor can be mounted externally on the pipe using a clamp.
 
-Placement considerations:
+<strong>Placement considerations:</strong>
 The turbine sensor is installed inline with the water supply, while the ultrasonic sensor can be externally clamped onto the pipe. This distinction was an important consideration when evaluating potential sensor configurations for the system.
 </p>
     </div>
-</section>
+
     
         <h3>Brine Level Sensor</h3>
    
@@ -130,5 +130,25 @@ Design consideration:
 The sensor therefore prioritizes reliability and cost-effectiveness while providing the building management team with an actionable low-level warning before softener failure occurs.
 </p>
 
+
+
+<h3>Conductivity Sensor</h3>
+
+<p>The conductivity sensor monitors water quality at the outlet of the water softener, providing an indication of when the softening process may no longer be effectively removing hardness from the water.
+
+<strong>How it works</strong>
+A conductivity probe is positioned in a small sampling chamber connected to the softener's outlet pipe. The probe uses two electrodes and applies a small AC current between them to measure how readily electricity passes through the water.
+
+Water hardness is primarily associated with dissolved calcium (Ca²⁺) and magnesium (Mg²⁺) ions. As the concentration of dissolved ions increases, electrical conductivity generally increases as well. Therefore, a rise in conductivity can be used as an indicator of increasing hardness and potential hard-water breakthrough.
+
+<strong>What a rising reading indicates</strong>
+
+Resin exhaustion — the softener's ion-exchange resin may be reaching its capacity.
+Increasing hardness — more hardness ions may be passing through the softener.
+Hard-water breakthrough — untreated or insufficiently softened water may be entering the building's water system.
+
+<strong>Role in the monitoring system</strong>
+The conductivity sensor provides an early warning of declining softener performance. Combined with the flow rate and brine-level sensors, it allows the monitoring system to detect potential problems and provide building management with actionable information before water quality is significantly affected.
+</p>
 
 </body>
