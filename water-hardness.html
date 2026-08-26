@@ -89,67 +89,94 @@ up​
     <div>
     <h3>HARDWARE SENSORS</h3>
     <p>The hardware sensors used in the SmartSoft system include a brine level sensor, a conductivity sensor, and a flow rate sensor. These sensors are strategically placed within the water softening system to provide accurate and reliable data on water quality. The brine level sensor monitors the salt levels in the brine tank, the conductivity sensor measures the electrical conductivity of the water to determine hardness levels, and the flow rate sensor tracks the volume of water passing through the system.</p>
-    <img src="hardware sensors.PNG" alt="Hardware Sensors" width="600"></p>
-    <h3>Flow Rate Sensor</h3>
-    <img src="flow rate sensor.PNG" alt="Flow Rate Sensor" width="600"></p>
-    <p>The flow rate sensor measures the rate of water entering the water softener, providing information about how much water is passing through the system over time.The flow rate sensor continuously monitors the volumetric flow of incoming hard, unsoftened water (ground or surface water) entering the treatment system. While standard environmental sensors provide baseline metrics, the flow rate sensor serves as the primary operational safeguard for system capacity and data validation.
-     <p>
-<strong>Two sensing approaches were considered:</strong>
+    <img src="hardware sensors.PNG" alt="Hardware Sensors" width="300"><img src="sensor technologies.PNG" alt="Sensor Technologies" width="300"></p>
+            <section><h3>Flow Rate Sensor</h3>
+                <img src="flow rate sensor.PNG" alt="Flow Rate Sensor" width="600"></p>
+                <p>The flow rate sensor measures the rate of water entering the water softener, providing information about how much water is passing through the system over time.The flow rate sensor continuously monitors the volumetric flow of incoming hard, unsoftened water (ground or surface water) entering the treatment system. While standard environmental sensors provide baseline metrics, the flow rate sensor serves as the primary operational safeguard for system capacity and data validation.
+                <p>
+            <strong>Two sensing approaches were considered:</strong>
 
-1. Turbine / Impeller Sensor with Magnetic Pickup
-An inline turbine rotates as water flows through the pipe. A magnet embedded in the turbine is detected by a Hall-effect sensor, producing electrical pulses as the turbine rotates. By counting these pulses, the system can determine the water flow rate, typically reported in L/min or m³/h.
+            1. Turbine / Impeller Sensor with Magnetic Pickup
+            An inline turbine rotates as water flows through the pipe. A magnet embedded in the turbine is detected by a Hall-effect sensor, producing electrical pulses as the turbine rotates. By counting these pulses, the system can determine the water flow rate, typically reported in L/min or m³/h.
 
-2. Ultrasonic Time-of-Flight Sensor
-An ultrasonic sensor measures flow by detecting changes in the travel time of ultrasonic signals through the moving water. Unlike the turbine-based approach, the sensor can be mounted externally on the pipe using a clamp.
+            2. Ultrasonic Time-of-Flight Sensor
+            An ultrasonic sensor measures flow by detecting changes in the travel time of ultrasonic signals through the moving water. Unlike the turbine-based approach, the sensor can be mounted externally on the pipe using a clamp.
 
-<strong>Placement considerations:</strong>
-The turbine sensor is installed inline with the water supply, while the ultrasonic sensor can be externally clamped onto the pipe. This distinction was an important consideration when evaluating potential sensor configurations for the system.
-</p>
-    </div>
+            <strong>Placement considerations:</strong>
+            The turbine sensor is installed inline with the water supply, while the ultrasonic sensor can be externally clamped onto the pipe. This distinction was an important consideration when evaluating potential sensor configurations for the system.
+            </p>
+                </div>
+            </section>
 
-    
-        <h3>Brine Level Sensor</h3>
-   
+                <section>
+                    <h3>Brine Level Sensor</h3>
+            
 
-<p>The brine level sensor monitors the salt and brine supply inside the softener’s brine tank to help ensure that regeneration can occur properly. If the brine level becomes too low, the system can alert building management before the softener begins producing hard water.
+            <p>The brine level sensor monitors the salt and brine supply inside the softener’s brine tank to help ensure that regeneration can occur properly. If the brine level becomes too low, the system can alert building management before the softener begins producing hard water.
 
-How it works
-A float is positioned vertically inside the brine tank and moves up and down with the brine level. A magnetic reed switch detects the float's position and produces a simple digital signal (0/1). When the float drops below a defined level, the signal is sent to the IoT controller, which can trigger a low-level alert on the building management dashboard.
+            <strong>How it works</strong>
+            A float is positioned vertically inside the brine tank and moves up and down with the brine level. A magnetic reed switch detects the float's position and produces a simple digital signal (0/1). When the float drops below a defined level, the signal is sent to the IoT controller, which can trigger a low-level alert on the building management dashboard.
 
-Sensor options considered
-Several technologies were considered for monitoring brine and salt levels, including:
-<ul>
-    <li><strong>Float sensor</strong> — simple, reliable, and relatively low cost; suitable for detecting whether sufficient brine is available.</li>
-    <li><strong>Ultrasonic level sensor</strong> — provides a more precise measurement of liquid level without physical contact.</li>
-    <li><strong>Guided Wave Radar</strong> — offers accurate level measurement but is more complex and costly.</li>
-    <li><strong>Electronic salt-level sensors</strong> — can provide more detailed information about remaining salt, such as an estimated percentage.</li>
-</ul>
+            <strong>Sensor options considered</strong>
+            Several technologies were considered for monitoring brine and salt levels, including:
+            <ul>
+                <li><strong>Float sensor</strong> — simple, reliable, and relatively low cost; suitable for detecting whether sufficient brine is available.</li>
+                <li><strong>Ultrasonic level sensor</strong> — provides a more precise measurement of liquid level without physical contact.</li>
+                <li><strong>Guided Wave Radar</strong> — offers accurate level measurement but is more complex and costly.</li>
+                <li><strong>Electronic salt-level sensors</strong> — can provide more detailed information about remaining salt, such as an estimated percentage.</li>
+            </ul>
 
-For a condo or apartment building application, the float sensor was considered a practical option because the primary requirement was to determine whether there was enough salt/brine for reliable regeneration, rather than continuously measuring the exact liquid level.
+            For a condo or apartment building application, the float sensor was considered a practical option because the primary requirement was to determine whether there was enough salt/brine for reliable regeneration, rather than continuously measuring the exact liquid level.
 
-Design consideration:
-The sensor therefore prioritizes reliability and cost-effectiveness while providing the building management team with an actionable low-level warning before softener failure occurs.
-</p>
+            <strong>Design consideration:</strong>
+            The sensor therefore prioritizes reliability and cost-effectiveness while providing the building management team with an actionable low-level warning before softener failure occurs.
+            </p>
+            </section>
 
 
+                <section><h3>Conductivity Sensor</h3>
 
-<h3>Conductivity Sensor</h3>
+                <p>The conductivity sensor monitors water quality at the outlet of the water softener, providing an indication of when the softening process may no longer be effectively removing hardness from the water.
 
-<p>The conductivity sensor monitors water quality at the outlet of the water softener, providing an indication of when the softening process may no longer be effectively removing hardness from the water.
+                <p><strong>How it works</strong>
+                A conductivity probe is positioned in a small sampling chamber connected to the softener's outlet pipe. The probe uses two electrodes and applies a small AC current between them to measure how readily electricity passes through the water.
 
-<strong>How it works</strong>
-A conductivity probe is positioned in a small sampling chamber connected to the softener's outlet pipe. The probe uses two electrodes and applies a small AC current between them to measure how readily electricity passes through the water.
+                Water hardness is primarily associated with dissolved calcium (Ca²⁺) and magnesium (Mg²⁺) ions. As the concentration of dissolved ions increases, electrical conductivity generally increases as well. Therefore, a rise in conductivity can be used as an indicator of increasing hardness and potential hard-water breakthrough.
 
-Water hardness is primarily associated with dissolved calcium (Ca²⁺) and magnesium (Mg²⁺) ions. As the concentration of dissolved ions increases, electrical conductivity generally increases as well. Therefore, a rise in conductivity can be used as an indicator of increasing hardness and potential hard-water breakthrough.
+                <strong>What a rising reading indicates</strong>
 
-<strong>What a rising reading indicates</strong>
+                Resin exhaustion — the softener's ion-exchange resin may be reaching its capacity.
+                Increasing hardness — more hardness ions may be passing through the softener.
+                Hard-water breakthrough — untreated or insufficiently softened water may be entering the building's water system.
 
-Resin exhaustion — the softener's ion-exchange resin may be reaching its capacity.
-Increasing hardness — more hardness ions may be passing through the softener.
-Hard-water breakthrough — untreated or insufficiently softened water may be entering the building's water system.
+                <strong>Role in the monitoring system</strong>
+                The conductivity sensor provides an early warning of declining softener performance. Combined with the flow rate and brine-level sensors, it allows the monitoring system to detect potential problems and provide building management with actionable information before water quality is significantly affected.
+                </p></section>
 
-<strong>Role in the monitoring system</strong>
-The conductivity sensor provides an early warning of declining softener performance. Combined with the flow rate and brine-level sensors, it allows the monitoring system to detect potential problems and provide building management with actionable information before water quality is significantly affected.
-</p>
+            <section>
+            <h3>IoT Controller</h3>
+            The IoT controller acts as the central integration point between the water softener's physical sensors and the remote monitoring dashboard. It combines a microcontroller, sensor interfaces, and communication capabilities to collect, process, and transmit information from the softener.
+
+            <strong>How it works</strong>
+            The microcontroller receives signals from each sensor and converts them into usable data:
+
+            Digital signal (0/1) → brine level sensor
+            Analog signal → conductivity sensor
+            Pulse/frequency signal → flow rate sensor
+
+            The controller can then apply basic logic to identify conditions such as low brine levels, increasing conductivity, or abnormal flow rates.
+
+            <strong>Connecting the system</strong>
+            Beyond local processing, the IoT controller provides the communication layer needed to transmit sensor data to the cloud and ultimately the building management dashboard. Depending on the system architecture, this communication could use technologies such as Wi-Fi, LoRa, Zigbee, or Ethernet.
+
+            This makes the IoT controller the bridge between the physical water-softening system and the digital monitoring interface, enabling remote monitoring, data visualization, and automated alerts.
+
+            <strong>System Architecture</strong>
+
+            Sensors → IoT Controller → Cloud → Monitoring Dashboard
+
+            The controller therefore transforms individual sensor measurements into actionable information that building management can use to monitor softener performance and respond to potential issues.
+            </p>
+            </section>
 
 </body>
