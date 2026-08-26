@@ -36,7 +36,7 @@
     <div>   
         <h1>Water Hardness Design Spring for Building Management</h1>
         <span class="project-tag">
-                           <h1>Miro · Design Sprint · Problem & Solution · Stakeholders  · Prototyping · Usability Testing</h1>  
+                           <h3>Miro · Design Sprint · Problem & Solution · Stakeholders  · Prototyping · Usability Testing</h3>  
                         </span>
         <p>From: SYDE 600 - Systems Theory, Models, Research & Design</p>
         <p>Members: Christy Cui, Gengteng Xie, Kaiyuan Zhang , Shirui Yang, Tina Tang, Yingti Zhang</p>
@@ -73,22 +73,7 @@
 <p>System Component: Flow Rate Sensor Integration
 Primary Function
 
-The flow rate sensor continuously monitors the volumetric flow of incoming hard, unsoftened water (ground or surface water) entering the treatment system. While standard environmental sensors provide baseline metrics, the flow rate sensor serves as the primary operational safeguard for system capacity and data validation.
-
-Key Functional Roles
-
-Resin Protection & Treatment Capacity Control: Softening units operate within specific flow rate thresholds (typically 0–45 GPM). Excessively high flow rates reduce contact time with the ion-exchange resin, leading to incomplete hardness removal and premature resin exhaustion. Real-time monitoring ensures incoming volume remains within optimal treatment limits.
-
-Cross-Sensor Malfunction & Anomaly Detection: By correlating real-time volumetric data with post-treatment hardness readings (e.g., via conductivity or ion-selective sensors), the system performs automated health checks:
-
-Zero-Flow Anomaly: A zero flow rate reading paired with an active hardness reading (>15 ppm sustained for >5 minutes) flags an explicit sensor malfunction.
-
-Discrepancy Checks: Mismatched flow vs. hardness profiles highlight mechanical failures, such as stuck valves or erratic tap control of incoming hard water.
-
-Over-Saturation Risk Prevention: If flow rates remain within normal parameters (0–45 GPM) but hardness surges (>80 ppm), the system flags an insufficient sodium ion exchanger state—preventing unsoftened water from bypassing effective treatment.
-
-Data Correlation & Regional Scalability: Continuous flow volume tracking provides the empirical data required to model mathematical correlations between dynamic flow rates and hardness concentrations. This predictive telemetry is critical for scaling the IoT sensor package across multi-building infrastructure across regions (e.g., Kitchener-Waterloo area water networks).
-</p>
+The flow rate sensor continuously monitors the volumetric flow of incoming hard, unsoftened water (ground or surface water) entering the treatment system. While standard environmental sensors provide baseline metrics, the flow rate sensor serves as the primary operational safeguard for system capacity and data validation.</p>
 </section>
 
 <section>
@@ -104,10 +89,10 @@ Data Correlation & Regional Scalability: Continuous flow volume tracking provide
     <h3>HARDWARE SENSORS</h3>
     <p>The hardware sensors used in the SmartSoft system include a brine level sensor, a conductivity sensor, and a flow rate sensor. These sensors are strategically placed within the water softening system to provide accurate and reliable data on water quality. The brine level sensor monitors the salt levels in the brine tank, the conductivity sensor measures the electrical conductivity of the water to determine hardness levels, and the flow rate sensor tracks the volume of water passing through the system.</p>
     <img src="hardware sensors.PNG" alt="Hardware Sensors" width="600"></p>
-    <h4>Flow rate sensor</h4>
+    <h3>Flow Rate Sensor</h3>
     <img src="flow rate sensor.PNG" alt="Flow Rate Sensor" width="600"></p>
-    <p>The flow rate sensor measures the rate of water entering the water softener, providing information about how much water is passing through the system over time.
-
+    <p>The flow rate sensor measures the rate of water entering the water softener, providing information about how much water is passing through the system over time.The flow rate sensor continuously monitors the volumetric flow of incoming hard, unsoftened water (ground or surface water) entering the treatment system. While standard environmental sensors provide baseline metrics, the flow rate sensor serves as the primary operational safeguard for system capacity and data validation.
+     <p>
 Two sensing approaches were considered:
 
 1. Turbine / Impeller Sensor with Magnetic Pickup
@@ -121,5 +106,29 @@ The turbine sensor is installed inline with the water supply, while the ultrason
 </p>
     </div>
 </section>
+    
+        <h3>Brine Level Sensor</h3>
+   
+
+<p>The brine level sensor monitors the salt and brine supply inside the softener’s brine tank to help ensure that regeneration can occur properly. If the brine level becomes too low, the system can alert building management before the softener begins producing hard water.
+
+How it works
+A float is positioned vertically inside the brine tank and moves up and down with the brine level. A magnetic reed switch detects the float's position and produces a simple digital signal (0/1). When the float drops below a defined level, the signal is sent to the IoT controller, which can trigger a low-level alert on the building management dashboard.
+
+Sensor options considered
+Several technologies were considered for monitoring brine and salt levels, including:
+<ul>
+    <li><strong>Float sensor</strong> — simple, reliable, and relatively low cost; suitable for detecting whether sufficient brine is available.</li>
+    <li><strong>Ultrasonic level sensor</strong> — provides a more precise measurement of liquid level without physical contact.</li>
+    <li><strong>Guided Wave Radar</strong> — offers accurate level measurement but is more complex and costly.</li>
+    <li><strong>Electronic salt-level sensors</strong> — can provide more detailed information about remaining salt, such as an estimated percentage.</li>
+</ul>
+
+For a condo or apartment building application, the float sensor was considered a practical option because the primary requirement was to determine whether there was enough salt/brine for reliable regeneration, rather than continuously measuring the exact liquid level.
+
+Design consideration:
+The sensor therefore prioritizes reliability and cost-effectiveness while providing the building management team with an actionable low-level warning before softener failure occurs.
+</p>
+
 
 </body>
