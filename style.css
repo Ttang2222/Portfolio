@@ -39,7 +39,7 @@ body {
 .navbar .logo {
     font-size: 24px;
     font-weight: bold;
-    color: var(--accent);
+    color: magenta;
 }
 
 .navbar nav a {
@@ -61,7 +61,6 @@ body {
     align-items: center;
     text-align: center;
     padding: 0 20px;
-    background-image:url("farm animals.jpg");
     background-size: cover;
     background-position: center;
 }
@@ -72,7 +71,7 @@ body {
 }
 
 .hero-content .highlight {
-    color: var(--accent);
+    color: magenta;
 }
 
 .hero-content p {
@@ -98,6 +97,12 @@ body {
 }
 
 /* Projects Section */
+.h2 {
+    color: magenta;  
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .projects-section {
     padding: 60px 8%;
 }
