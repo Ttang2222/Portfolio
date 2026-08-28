@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            TINA TANG
+        </div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Work</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Customer Profile Design of Ms. Emmy</h1>
+        <p>This customer profile design was designed to capture the unique technological skills, preferences, and needs of Ms. Emmy, ensuring a personalized and satisfying user experience with a product idea I had called "<em>Interactive</em> Alexa". The profile outlines a brief customer profile, detailing the pains and gains, as well as the functional, social, and personal/emotion aspirations she has as a 73 year old grandmother.</p>
+        <img src="Customer Profile Design.PNG" alt="customer profile design" width="600">
+    
+    </main>
+</body>
+</html>
