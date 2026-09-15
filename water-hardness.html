@@ -47,17 +47,23 @@
 
     <section>
         <h2>3. BRAINSTORMING: STORYBOARDING & SKETCHING</h2>
-        <img src="storyboarding water hardness.PNG" alt="water hardness storyboarding" width="200">
+        <img src="storyboarding water hardness.PNG" alt="water hardness storyboarding" width="200"><img src="centralized solution brainstorming.PNG" alt="centralized solution brainstorming" width="200"><img src="decentralized solution brainstorming.PNG" alt="decentralized solution brainstorming" width="200">
         <p>Each member in our team had their own 9-step storyboarding process, which is laid out in Miro with three phases:
+        <ol>
             - Connect: Building Partnerships & Planning
             - Treat: Optimize Chemical Water Softening
-            - Reduce: Brine & Waste Management</p>
-        
+            - Reduce: Brine & Waste Management
+        </ol>
+
+        </p>
     </section>
 
     <section>
-        <h2>4. DECISION: PROTYPING FOCUS & DESIGN CONSIDERATIONS</h2>
-<p>For prototyping in this class, our team focused on developing an online dashboard for building managers. That way, it is a lot easier to scale to scope our project for target users when conducting usability testing.
+        <h2>4. DECISION: NARROWING DOWN SOLUTION APPROACH</h2>
+        <img src="narrow down to building.PNG" alt="narrow down to building" width="600">
+        <p>Following our brainstorming and storyboarding phases, our team shifted away from a region-centric model to adopt a targeted, building-by-building approach. This strategy allowed us to tailor solutions to the specific infrastructure and needs of each facility, making the system much more feasible to design, implement, and manage within our strict course timeline.
+
+By focusing on individual sites, we empowered building managers with intuitive tools to monitor water hardness effectively, thereby improving water quality and reducing long-term maintenance costs. To support prototyping and usability testing within scope, we developed an interactive online dashboard tailored specifically for these managers, making it straightforward to evaluate user interaction and scale our solution.
 
 Online dashboard for property
 managers -> helps with scaling
@@ -71,18 +77,36 @@ up​
     <div>
     <h3>APP PROTOTYPE: SMARTSOFT</h3>
     <p>The SmartSoft app is designed to provide building management teams with real-time water quality data, including hardness levels, brine tank status, and flow rates. The app features a user-friendly interface that allows for easy monitoring and management of the water softening system. Alerts and notifications are sent to the management team in case of any anomalies or maintenance requirements.</p>
+
+    <img src="smartsoft prototype preview.PNG" alt="SmartSoft Prototype Preview" width="600">
     <a href="https://radiant-cupcake-6238d8.netlify.app/" target="_blank">View SmartSoft Prototype</a></p>
+        <ul>
+        <li>System: SmartSoft IoT Architecture​</li>
+
+
+        <li>Components: Integrated
+        Hardware Stack (Hardness,
+        Brine level, Flow Sensors) +
+        App Dashboard (the
+        prototype tested by
+        interviewees)​</li>
+        <li>Real-time monitoring of water hardness levels</li>
+        <li>Brine tank status alerts</li>
+        <li>Flow rate tracking and analysis</li>
+        <li>User-friendly dashboard for building management teams</li>
+    </ul>
     </div>
     <div>
+        <section>
     <h3>HARDWARE SENSORS</h3>
     <div class="image-row">
         <p>The hardware sensors used in the SmartSoft system include a brine level sensor, a conductivity sensor, and a flow rate sensor. These sensors are strategically placed within the water softening system to provide accurate and reliable data on water quality. The brine level sensor monitors the salt levels in the brine tank, the conductivity sensor measures the electrical conductivity of the water to determine hardness levels, and the flow rate sensor tracks the volume of water passing through the system.</p>
     
         <img src="hardware sensors.PNG" alt="Hardware Sensors" width="300">
         <img src="sensor technologies.PNG" alt="Sensor Technologies" width="300">
-    </div>
+    </section></div>
 <section>
-        <h3>Flow Rate Sensor</h3>
+        <h4>Flow Rate Sensor</h4>
         <p>The flow rate sensor measures the rate of water entering the water softener, providing information about how much water is passing through the system over time.The flow rate sensor continuously monitors the volumetric flow of incoming hard, unsoftened water (ground or surface water) entering the treatment system. While standard environmental sensors provide baseline metrics, the flow rate sensor serves as the primary operational safeguard for system capacity and data validation.
     
     </div>
@@ -102,7 +126,7 @@ up​
 </section>
 
 <section>
-                    <h3>Brine Level Sensor</h3>
+                    <h4>Brine Level Sensor</h4>
             
 
             <p>The brine level sensor monitors the salt and brine supply inside the softener’s brine tank to help ensure that regeneration can occur properly. If the brine level becomes too low, the system can alert building management before the softener begins producing hard water.
@@ -127,7 +151,7 @@ up​
  </section>
 
 
-<section><h3>Conductivity Sensor</h3>
+<section><h4>Conductivity Sensor</h4>
 
                 <p>The conductivity sensor monitors water quality at the outlet of the water softener, providing an indication of when the softening process may no longer be effectively removing hardness from the water.
 
@@ -147,7 +171,7 @@ up​
                 </p></section>
 
 <section>
-            <h3>IoT Controller</h3>
+            <h4>IoT Controller</h4>
             The IoT controller acts as the central integration point between the water softener's physical sensors and the remote monitoring dashboard. It combines a microcontroller, sensor interfaces, and communication capabilities to collect, process, and transmit information from the softener.
 
             <strong>How it works</strong>
@@ -176,6 +200,7 @@ up​
 <h2>6. USER TESTING</h2>
 User outreach strategy was done via email, in-person office visits or phone calls to speed up the process. The link to the <a href="https://radiant-cupcake-6238d8.netlify.app/" target="_blank">prototype</a> was provided, along with an attached Google Form for feedback as data for user testing. The user testing was conducted with building managers and facility maintenance personnel from 5 different building management organizations as participants(WCRI​, Wilson, Blanchard Management Inc​, KWP Management Corp.​, Modern property Management Int.​, Krall Property Management Inc. OLCMP​). Each participant was asked to complete a series of tasks using the SmartSoft app prototype, while their feedback were recorded for analysis.
 <div class="image-row">
+    <h4>USER TESTING PROTOCOL</h4>
 <img src="1.PNG" alt="user testing 1" width="600">
 <img src="2.PNG" alt="user testing 2" width="600">
 <img src="3.PNG" alt="user testing 3" width="600">
@@ -188,10 +213,14 @@ User outreach strategy was done via email, in-person office visits or phone call
 <img src="10.PNG" alt="user testing 10" width="600">
 </div>
 
-<h3>USER TESTING RESULTS</h3>
 <div class="image-row">
+    <h4>USER TESTING RESULTS</h4>
 <img src="analyzing findings 1.PNG" alt="analyzing findings 1" width="600">
 <img src="analyzing findings 2.PNG" alt="analyzing findings 2" width="600">
 </div>
 
+
+<h2>7. KEY ACCOMPLISHMENTS</h2>
+<p>The main key accomplishments in our design sprint for this class would be the following:</p>
+<img src="key accomplishments.PNG" alt="key accomplishments" width="600">
 </body>
