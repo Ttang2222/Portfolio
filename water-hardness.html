@@ -35,19 +35,19 @@
     </div>
 
     <section>
-        <h2>UNDERSTANDING THE PROBLEM</h2>
+        <h2>1. UNDERSTANDING THE PROBLEM</h2>
         <p>
             Water hardness is a common issue in building management, affecting both the efficiency of water systems and the longevity of appliances. Hard water contains high levels of calcium and magnesium ions, which can lead to scale buildup in pipes and fixtures, reducing water flow and increasing maintenance costs. Understanding and managing water hardness is crucial for ensuring optimal performance and sustainability in building operations.
     </div>
     <div>
-        <h2>STAKEHOLDERS & MAPPING THE PROCESS</h2>
+        <h2>2. STAKEHOLDERS & MAPPING THE PROCESS</h2>
         <img src="all stakeholders.PNG" alt="all stakeholders" width="600">
         <p>Initially, the way our team wanted to view the problem was through the lens of primary stakeholders, which are the immediate water users. However, we figured it would be difficult to address the water hardness issue with this approach, as our solution ultimately might not be easily accessible or interesting enough for normal water users to employ in their day to day lives. Luckily we thought through this before our actual user testing.</p>
     </section>
 
     <section>
-        <h2>BRAINSTORMING: STORYBOARDING & SKETCHING</h2>
-        <img src="storyboarding water hardness.PNG" alt="water hardness storyboarding" width="600">
+        <h2>3. BRAINSTORMING: STORYBOARDING & SKETCHING</h2>
+        <img src="storyboarding water hardness.PNG" alt="water hardness storyboarding" width="200">
         <p>Each member in our team had their own 9-step storyboarding process, which is laid out in Miro with three phases:
             - Connect: Building Partnerships & Planning
             - Treat: Optimize Chemical Water Softening
@@ -56,12 +56,7 @@
     </section>
 
     <section>
-        <h2></h2>
-    </section>
-
-
-    <section>
-        <h2>DECISION: PROTYPING FOCUS & DESIGN CONSIDERATIONS</h2>
+        <h2>4. DECISION: PROTYPING FOCUS & DESIGN CONSIDERATIONS</h2>
 <p>For prototyping in this class, our team focused on developing an online dashboard for building managers. That way, it is a lot easier to scale to scope our project for target users when conducting usability testing.
 
 Online dashboard for property
@@ -70,9 +65,9 @@ up​
 </section>
 
 <section>
-    <h2>FINAL SOLUTION</h2>
+    <h2>5. FINAL SOLUTION</h2>
         <p>The final solution involves the implementation of three real-time hardware sensors (brine level, conductivity, flow rate), connected through an IoT infrastrucutre to the SmartSoft prototype app. Building management or facility teams will have access to water quality measurements in-real-time.</p>
-    <img src="iot-system-architecture.PNG" alt="IoT System Architecture" width="600"></p>
+    <img src="iot-system-architecture.PNG" alt="IoT System Architecture" width="200" height="100"></p>
     <div>
     <h3>APP PROTOTYPE: SMARTSOFT</h3>
     <p>The SmartSoft app is designed to provide building management teams with real-time water quality data, including hardness levels, brine tank status, and flow rates. The app features a user-friendly interface that allows for easy monitoring and management of the water softening system. Alerts and notifications are sent to the management team in case of any anomalies or maintenance requirements.</p>
@@ -80,12 +75,17 @@ up​
     </div>
     <div>
     <h3>HARDWARE SENSORS</h3>
-    <p>The hardware sensors used in the SmartSoft system include a brine level sensor, a conductivity sensor, and a flow rate sensor. These sensors are strategically placed within the water softening system to provide accurate and reliable data on water quality. The brine level sensor monitors the salt levels in the brine tank, the conductivity sensor measures the electrical conductivity of the water to determine hardness levels, and the flow rate sensor tracks the volume of water passing through the system.</p>
-    <img src="hardware sensors.PNG" alt="Hardware Sensors" width="300"><img src="sensor technologies.PNG" alt="Sensor Technologies" width="300"></p>
-            <section><h3>Flow Rate Sensor</h3>
-                <img src="flow rate sensor.PNG" alt="Flow Rate Sensor" width="600"></p>
-                <p>The flow rate sensor measures the rate of water entering the water softener, providing information about how much water is passing through the system over time.The flow rate sensor continuously monitors the volumetric flow of incoming hard, unsoftened water (ground or surface water) entering the treatment system. While standard environmental sensors provide baseline metrics, the flow rate sensor serves as the primary operational safeguard for system capacity and data validation.
-                <p>
+    <div class="image-row">
+        <p>The hardware sensors used in the SmartSoft system include a brine level sensor, a conductivity sensor, and a flow rate sensor. These sensors are strategically placed within the water softening system to provide accurate and reliable data on water quality. The brine level sensor monitors the salt levels in the brine tank, the conductivity sensor measures the electrical conductivity of the water to determine hardness levels, and the flow rate sensor tracks the volume of water passing through the system.</p>
+    
+        <img src="hardware sensors.PNG" alt="Hardware Sensors" width="300">
+        <img src="sensor technologies.PNG" alt="Sensor Technologies" width="300">
+    </div>
+<section>
+        <h3>Flow Rate Sensor</h3>
+        <p>The flow rate sensor measures the rate of water entering the water softener, providing information about how much water is passing through the system over time.The flow rate sensor continuously monitors the volumetric flow of incoming hard, unsoftened water (ground or surface water) entering the treatment system. While standard environmental sensors provide baseline metrics, the flow rate sensor serves as the primary operational safeguard for system capacity and data validation.
+    
+    </div>
             <strong>Two sensing approaches were considered:</strong>
 
             1. Turbine / Impeller Sensor with Magnetic Pickup
@@ -95,12 +95,13 @@ up​
             An ultrasonic sensor measures flow by detecting changes in the travel time of ultrasonic signals through the moving water. Unlike the turbine-based approach, the sensor can be mounted externally on the pipe using a clamp.
 
             <strong>Placement considerations:</strong>
-            The turbine sensor is installed inline with the water supply, while the ultrasonic sensor can be externally clamped onto the pipe. This distinction was an important consideration when evaluating potential sensor configurations for the system.
-            </p>
+            The turbine sensor is installed inline with the water supply, while the ultrasonic sensor can be externally clamped onto the pipe. This distinction was an important consideration when evaluating potential sensor configurations for the system.    
+        </p>
+        <img src="flow rate sensor.PNG" alt="Flow Rate Sensor" width="300" height="300">
                 </div>
-            </section>
+</section>
 
-                <section>
+<section>
                     <h3>Brine Level Sensor</h3>
             
 
@@ -123,10 +124,10 @@ up​
             <strong>Design consideration:</strong>
             The sensor therefore prioritizes reliability and cost-effectiveness while providing the building management team with an actionable low-level warning before softener failure occurs.
             </p>
-            </section>
+ </section>
 
 
-                <section><h3>Conductivity Sensor</h3>
+<section><h3>Conductivity Sensor</h3>
 
                 <p>The conductivity sensor monitors water quality at the outlet of the water softener, providing an indication of when the softening process may no longer be effectively removing hardness from the water.
 
@@ -145,7 +146,7 @@ up​
                 The conductivity sensor provides an early warning of declining softener performance. Combined with the flow rate and brine-level sensors, it allows the monitoring system to detect potential problems and provide building management with actionable information before water quality is significantly affected.
                 </p></section>
 
-            <section>
+<section>
             <h3>IoT Controller</h3>
             The IoT controller acts as the central integration point between the water softener's physical sensors and the remote monitoring dashboard. It combines a microcontroller, sensor interfaces, and communication capabilities to collect, process, and transmit information from the softener.
 
@@ -169,10 +170,10 @@ up​
 
             The controller therefore transforms individual sensor measurements into actionable information that building management can use to monitor softener performance and respond to potential issues.
             </p>
-            </section>
+ </section>
 
 
-<h2>USER TESTING</h2>
+<h2>6. USER TESTING</h2>
 User outreach strategy was done via email, in-person office visits or phone calls to speed up the process. The link to the <a href="https://radiant-cupcake-6238d8.netlify.app/" target="_blank">prototype</a> was provided, along with an attached Google Form for feedback as data for user testing. The user testing was conducted with building managers and facility maintenance personnel from 5 different building management organizations as participants(WCRI​, Wilson, Blanchard Management Inc​, KWP Management Corp.​, Modern property Management Int.​, Krall Property Management Inc. OLCMP​). Each participant was asked to complete a series of tasks using the SmartSoft app prototype, while their feedback were recorded for analysis.
 <div class="image-row">
 <img src="1.PNG" alt="user testing 1" width="600">

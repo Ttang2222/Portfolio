@@ -205,6 +205,7 @@ html, body {
   .image-row img {
     width: 200px;  /* Set your desired uniform width */
     height: 200px; /* Set your desired uniform height */
+    gap: 10px; /* Space between images */
     object-fit: contain; /* Crops image to fill the box without distortion */
   }
 
