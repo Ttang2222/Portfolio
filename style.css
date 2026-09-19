@@ -156,6 +156,90 @@ html, body {
     color: magenta;
 }
 
+/* Tables */
+/* Table Container Styling */
+  .task-table {
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #0b0b0b; /* Deep dark background */
+    color: #f0f0f0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 4px 20px rgba(0, 255, 204, 0.15); /* Soft teal glow */
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #1a1a1a;
+  }
+
+  /* Table Header Styling */
+  .task-table th {
+    background: linear-gradient(135deg, #ff007f 0%, #00ffff 100%); /* Magenta to Teal gradient */
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    padding: 14px 18px;
+    text-align: left;
+    font-size: 0.95rem;
+  }
+
+  /* Table Cells Styling */
+  .task-table td {
+    padding: 14px 18px;
+    border-bottom: 1px solid #1f1f1f;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  /* Alternating Row Colors for Better Readability */
+  .task-table tr:nth-child(even) {
+    background-color: #121212;
+  }
+
+  .task-table tr:nth-child(odd) {
+    background-color: #080808;
+  }
+
+  /* Hover Effect */
+  .task-table tr:hover {
+    background-color: #1a1a1a;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  /* Last row border removal */
+  .task-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  /* Difficulty Badges */
+  .badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .badge-easy {
+    background-color: rgba(0, 255, 255, 0.15);
+    color: #00ffff; /* Teal */
+    border: 1px solid #00ffff;
+  }
+
+  .badge-moderate {
+    background-color: rgba(255, 153, 0, 0.15);
+    color: #ff9900; /* Warm amber for contrast */
+    border: 1px solid #ff9900;
+  }
+
+  .badge-difficult {
+    background-color: rgba(255, 0, 127, 0.15);
+    color: #ff007f; /* Magenta */
+    border: 1px solid #ff007f;
+  }
+
 /* Contact Section */
 .contact-section {
     padding: 80px 20px;
