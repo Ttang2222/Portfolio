@@ -23,8 +23,7 @@
             TINA TANG
         </div>
         <nav>
-            <a href="index.html#about">About</a>
-            <a href="index.html#projects">Work</a>
+            <a href="index.html#about">Home</a>
             <a href="index.html#contact">Contact</a>
         </nav>
     </header>
@@ -36,9 +35,61 @@
     <section id="about" class="hero-section">
 
         <div class="hero-content">
-            <p class="eyebrow">
-                <a href="#human">HUMAN</a> → <a href="#technology">INNOVATION WITH TECHNOLOGY & NANOSCIENCES</a> → <a href="#product-evaluation">PRODUCT EVALUATION</a> → <a href="#knowledge-synthesis">KNOWLEDGE SYNTHESIS</a>
-            </p>
+<!-- GABBY'S DOLLHOUSE CHARACTER NAVIGATION MENU -->
+    <div class="gabby-nav-container">
+      <p class="gabby-nav-title">✨ Jump to a Specialty Track ✨</p>
+      <div class="gabby-character-menu">
+        
+        <!-- Pillow Cat -> Human -->
+        <a href="#human-section" class="gabby-nav-item">
+          <div class="character-avatar-wrapper">
+            <!-- Replace with path to your cropped Pillow Cat image -->
+            <img src="pillowcat.png" alt="Pillow Cat" class="gabby-avatar">
+          </div>
+          <span class="gabby-label color-human">HUMAN</span>
+        </a>
+
+        <div class="arrow-container"
+        <span>▶</span>
+        </div>
+
+        <!-- Baby Box -> Innovation -->
+        <a href="#innovation-section" class="gabby-nav-item">
+          <div class="character-avatar-wrapper">
+            <!-- Replace with path to your cropped Baby Box image -->
+            <img src="babybox.png" alt="Baby Box" class="gabby-avatar">
+          </div>
+          <span class="gabby-label color-innovation">INNOVATION WITH TECHNOLOGY & NANOSCIENCES</span>
+        </a>
+
+        <div class="arrow-container"
+        <span>▶</span>
+        </div>
+
+        <!-- Cakey -> Product Evaluation -->
+        <a href="#evaluation-section" class="gabby-nav-item">
+          <div class="character-avatar-wrapper">
+            <!-- Replace with path to your cropped Cakey image -->
+            <img src="cakeycat.png" alt="Cakey" class="gabby-avatar">
+          </div>
+          <span class="gabby-label color-evaluation">PRODUCT EVALUATION</span>
+        </a>
+
+        <div class="arrow-container"
+        <span>▶</span>
+        </div>
+
+        <!-- Kitty Fairy -> Knowledge Synthesis -->
+        <a href="#synthesis-section" class="gabby-nav-item">
+          <div class="character-avatar-wrapper">
+            <!-- Replace with path to your cropped Kitty Fairy image -->
+            <img src="kittyfairy.png" alt="Kitty Fairy" class="gabby-avatar">
+          </div>
+          <span class="gabby-label color-synthesis">KNOWLEDGE SYNTHESIS</span>
+        </a>
+
+      </div>
+      </section>
 
             <h1>
                 Hi, I'm
@@ -53,10 +104,6 @@
             </p>
 
             <div class="hero-buttons">
-
-                <a href="#projects" class="btn">
-                    Explore My Work
-                </a>
                 
                 <a href="#contact" class="btn btn-secondary">
                     Get In Touch
@@ -72,85 +119,166 @@
          PROJECTS SECTION
          ========================================================= -->
 
-    <section id="projects" class="projects-section">
+    <!-- SELECTED WORK -->
+  <section id="work" class="projects-section">
+    <h2 class="h2">Selected Work</h2>
+    <p class="section-intro">A collection of projects spanning UX research, human factors, healthcare, materials science, nanotechnology, and interdisciplinary design.</p>
 
-        <div class="section-heading">
+  
 
-            <p class="eyebrow">
-                SELECTED WORK
-            </p>
 
-            <h1 class="highlight">
-                Projects & Experience
-            </h1>
+    <!-- ================= SECTION 1: HUMAN ================= -->
+    <div id="human-section" class="portfolio-track-block">
+      <div class="track-header-zone">
+        <h3 class="track-title color-human">✦ HUMAN</h3>
+        <p class="track-desc">Design and prototyping focused around human interaction, usability assessments, and ergonomics.</p>
+      </div>
 
-            <p>
-                A collection of projects spanning UX research,
-                human factors, healthcare, materials science,
-                nanotechnology, and interdisciplinary design. The "📋" icon to each bullet point below will take you to a more detailed description of the project in its entirety, including the process, deliverables, and outcomes. 
-            </p>
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <a href="project-end-of-life.html" class="project-card" target="_blank">
+          <div class="image-zoom-container">
+            <img src="images/placeholder-human1.jpg" alt="End-of-Life Decision-Making Tools Preview">
+          </div>
+          <div class="card-info">
+            <h3>End-of-Life Decision Tools</h3>
+            <p>A Human Factors study assessing tools and interfaces for end-of-life healthcare choice architectures.</p>
+            <span class="card-arrow-indicator">View Case Study 📋</span>
+          </div>
+        </a>
 
-        </div>
+        <!-- Project 2 -->
+        <a href="Customer Profile Design.PNG" class="project-card" target="_blank">
+          <div class="image-zoom-container">
+            <img src="Customer Profile Design.PNG" alt="WeChat User Profile Preview">
+          </div>
+          <div class="card-info">
+            <h3>WeChat Customer Profile</h3>
+            <p>Targeted user profile design and accessibility study mapping out a 73-year-old active user's interactions.</p>
+            <span class="card-arrow-indicator">View Case Study 📋</span>
+          </div>
+        </a>
 
-    <div>
-        <h2 id="human">HUMAN</h2>
-        <p> A lot of the work here is focused around design and prototyping for humans. You can see the process of some of my previous work below.
-            <ul>
-                <li>A Human Factors Study on End-of-Life Decision-Making Tools <a href="" class="icon-button" title="View project details" target="_blank">📋</a></li>
-                <li>Customer Profile Design of a 73-year old WeChat User<a href="Customer Profile Design.PNG" class="icon-button" title="View project details" target="_blank">📋</a></li>
-                <li>Human Factors & Usability Assessment of Grandmother Reading Set-Up - Physical Postural Ergonomics (RULA / REBA)<a href="grandma-posture.html" class="icon-button" title="View project details" target="_blank">📋</a></li>
-                <li>FitBud: Health and Fitness App featuring a virtual Personal Trainer of your choice<a href="fitbud.html" class="icon-button" title="View project details" target="_blank">📋</a></li>
-                <li>SmartSoft: Water Hardness Monitoring IoT Architecture System for Buildings<a href="water-hardness.html" class="icon-button" title="View project details" target="_blank">📋</a></li>
-                <li>Systems Mapping<a href="systemsmapping.html" class="icon-button" title="View project details" target="_blank">📋</a></li>
-                <li>NeilMed: Journey Mapping & Hierarchical Task Analysis (HTA) <a href="neilmed.html" class="icon-button" title="View project details" target="_blank">📋</a></li>
-            </ul>
-        </p>
+        <!-- Project 3 -->
+        <a href="project-postural-ergonomics.html" class="project-card" target="_blank">
+          <div class="image-zoom-container">
+            <img src="images/placeholder-human3.jpg" alt="Postural Ergonomics Assessment Preview">
+          </div>
+          <div class="card-info">
+            <h3>Grandmother Reading Setup</h3>
+            <p>Human Factors & usability assessment parsing physical postural ergonomics via RULA / REBA frameworks.</p>
+            <span class="card-arrow-indicator">View Case Study 📋</span>
+          </div>
+        </a>
+
+        <!-- Project 4 -->
+        <a href="fitbud.html" class="project-card" target="_blank">
+          <div class="image-zoom-container">
+            <img src="images/placeholder-human4.jpg" alt="FitBud App Preview">
+          </div>
+          <div class="card-info">
+            <h3>FitBud App Design</h3>
+            <p>Health and fitness app concept introducing an interactive system with custom virtual personal training.</p>
+            <span class="card-arrow-indicator">View Case Study 📋</span>
+          </div>
+        </a>
+      </div>
     </div>
 
-<div class="arrow-container">
-  <span>&#x25BC;</span> <!-- Solid down triangle -->
-</div>
 
-    <div> 
-        <h2 id="technology">INNOVATION WITH TECHNOLOGY & NANOSCIENCES</h2>
-        <p> This was where I had my "playground moments" that unleashed my creativity in nanotechnology and other mechanical applications.
-            <ul>
-                <li>Smart Hydrogel System for Diabetic Foot Ulcer Detection<a href="foot-ulcer.html" class="icon-button" title="View project details" target="_blank">📋</a></li>
-                <li>Water Hardness Hardware Sensors<a href="water-hardness.html" class="icon-button" title="View project details" target="_blank">📋</a></li>
-                <li>Own Solution to an Existing Study’s Topic: Iron-based Hydrogels for Postoperative Cancer Therapy</li><a href="iron-based-hydrogels.html" class="icon-button" title="View project details" target="_blank">📋</a></li>
-            </ul>
-        </p>
+    <!-- ================= SECTION 2: INNOVATION WITH TECH ================= -->
+    <div id="innovation-section" class="portfolio-track-block">
+      <div class="track-header-zone">
+        <h3 class="track-title color-innovation">✦ INNOVATION WITH TECHNOLOGY & NANOSCIENCES</h3>
+        <p class="track-desc">Creative experiments utilizing hardware engineering, nanotechnology solutions, and bio-systems.</p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <a href="foot-ulcer.html" class="project-card" target="_blank">
+          <div class="image-zoom-container">
+            <img src="images/placeholder-nano1.jpg" alt="Diabetic Foot Ulcer Detection Preview">
+          </div>
+          <div class="card-info">
+            <h3>Smart Hydrogel Detection</h3>
+            <p>Development framework for an early-stage chemical indicator tracking physiological markers on diabetic foot ulcers.</p>
+            <span class="card-arrow-indicator">View Case Study 📋</span>
+          </div>
+        </a>
+
+        <!-- Project 2 -->
+        <a href="water-hardness.html" class="project-card" target="_blank">
+          <div class="image-zoom-container">
+            <img src="images/placeholder-nano2.jpg" alt="Water Hardness Hardware Sensors Preview">
+          </div>
+          <div class="card-info">
+            <h3>Water Hardness Hardware</h3>
+            <p>Prototyping sensor matrices alongside an IoT systems layout for dynamic building monitoring setups.</p>
+            <span class="card-arrow-indicator">View Case Study 📋</span>
+          </div>
+        </a>
+      </div>
     </div>
 
-<div class="arrow-container">
-  <span>&#x25BC;</span> <!-- Solid down triangle -->
-</div>
 
-    <div>
-        <h2 id="product-evaluation">PRODUCT EVALUATION</h2>
-        <p>
-            <ul>
-                <li>NeilMed: Standards & Accessibility Audit<a href="neilmed.html" class="icon-button" title="View project details" target="_blank">📋</a></li>
-                <li>A/B Testing for ScrewHolder Prototype<a href="screwholder.html" class="icon-button" title="View project details" target="_blank">📋</a></li>
-            </ul>
-        </p>
+    <!-- ================= SECTION 3: PRODUCT EVALUATION ================= -->
+    <div id="evaluation-section" class="portfolio-track-block">
+      <div class="track-header-zone">
+        <h3 class="track-title color-evaluation">✦ PRODUCT EVALUATION</h3>
+        <p class="track-desc">Rigorous diagnostic tracking, auditing compliance standards, and validating human interface criteria.</p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <a href="neilmed.html" class="project-card" target="_blank">
+          <div class="image-zoom-container">
+            <img src="neilmed-journey-map.jpg" alt="NeilMed Standards & Accessibility Audit Preview">
+          </div>
+          <div class="card-info">
+            <h3>NeilMed Accessibility Audit</h3>
+            <p>Comprehensive standard-compliance screening analyzing human workflows and hardware accessibility loops.</p>
+            <span class="card-arrow-indicator">View Case Study 📋</span>
+          </div>
+        </a>
+
+        <!-- Project 2 -->
+        <a href="screwholder.html" class="project-card" target="_blank">
+          <div class="image-zoom-container">
+            <img src="images/placeholder-eval2.jpg" alt="A/B Testing for ScrewHolder Prototype Preview">
+          </div>
+          <div class="card-info">
+            <h3>ScrewHolder A/B Testing</h3>
+            <p>Formative usability validation evaluating ergonomic grip speed and error metrics across variants.</p>
+            <span class="card-arrow-indicator">View Case Study 📋</span>
+          </div>
+        </a>
+      </div>
     </div>
 
-<div class="arrow-container">
-  <span>&#x25BC;</span> <!-- Solid down triangle -->
-</div>
 
-    <div>
-        <h2 id="knowledge-synthesis">KNOWLEDGE SYNTHESIS</h2>
-        <p>
-            <ul>
-                <li>Scoping Review</li>
-            </ul>
-        </p>
+    <!-- ================= SECTION 4: KNOWLEDGE SYNTHESIS ================= -->
+    <div id="synthesis-section" class="portfolio-track-block">
+      <div class="track-header-zone">
+        <h3 class="track-title color-synthesis">✦ KNOWLEDGE SYNTHESIS</h3>
+        <p class="track-desc">Consolidating literature, framing cross-disciplinary vectors, and outputting evidence pathways.</p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <a href="scopingreview.html" class="project-card" target="_blank">
+          <div class="image-zoom-container">
+            <img src="images/placeholder-synthesis1.jpg" alt="Scoping Review Project Preview">
+          </div>
+          <div class="card-info">
+            <h3>Healthcare Scoping Review</h3>
+            <p>Aggregated meta-synthesis outlining complex human factors issues found within integrated medical systems.</p>
+            <span class="card-arrow-indicator">View Case Study 📋</span>
+          </div>
+        </a>
+      </div>
     </div>
 
-</section>
-
+  </section>
         <!-- =========================================================
          CONTACT
          ========================================================= -->

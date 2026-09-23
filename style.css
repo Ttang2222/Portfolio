@@ -311,3 +311,181 @@ footer {
         font-size: 2rem;
     }
 }
+
+
+
+
+
+
+
+/* ==========================================================================
+   PROJECTS SECTION ENHANCEMENTS & IMAGE ENLARGING EFFECT
+   ========================================================================== */
+
+.section-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: -20px auto 40px auto;
+  color: var(--text-muted);
+}
+
+.portfolio-track-block {
+  margin-bottom: 70px; /* MODIFIABLE INDICATOR: Space between tracking blocks */
+}
+
+.track-header-zone {
+  border-left: 4px solid var(--accent); /* MODIFIABLE INDICATOR: Accent left-border track style */
+  padding-left: 15px;
+  margin-bottom: 25px;
+}
+
+.track-title {
+  font-size: 1.6rem;
+  margin: 0 0 5px 0;
+  font-weight: 600;
+}
+
+/* Base track branding colors (incorporating magenta, pink, turquoise) */
+.color-human { color: #ff007f; }       /* Magenta */
+.color-innovation { color: #00ffff; }  /* Turquoise / Cyan */
+.color-evaluation { color: #ff66cc; }  /* Bright Pink */
+.color-synthesis { color: #00adb5; }   /* Muted Turquoise Variable */
+
+.track-desc {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Clean grid architecture link override */
+.projects-grid .project-card {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid #2a2a2a; /* MODIFIABLE INDICATOR: Subtle card perimeter borders */
+}
+
+/* Image zoom container mask */
+.image-zoom-container {
+  width: 100%;
+  height: 200px; /* MODIFIABLE INDICATOR: Control uniformly bounded graphic viewport heights */
+  overflow: hidden; /* Vital mask constraint for holding expanding picture zoom bounds inside */
+  background-color: #151515;
+}
+
+/* Graphic transition states */
+.image-zoom-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth easing acceleration */
+}
+
+/* THE HOVER PREVIEW IMAGE ENLARGEMENT TRICK */
+.project-card:hover .image-zoom-container img {
+  transform: scale(1.12); /* MODIFIABLE INDICATOR: Controls thumbnail expansion multiplier (e.g., 1.15 = 115%) */
+}
+
+/* Neon elevation overlay on hovering whole card cards */
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent); /* MODIFIABLE INDICATOR: Changes boundary highlight tone when focused */
+  box-shadow: 0 10px 25px rgba(0, 255, 204, 0.15); /* Soft turquoise splash glare glow */
+}
+
+.card-arrow-indicator {
+  display: inline-block;
+  margin-top: 15px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: magenta; /* Matching color schemes */
+  transition: color 0.2s;
+}
+
+.project-card:hover .card-arrow-indicator {
+  color: #00ffff; /* Alternates indicator values upon wrapper focus */
+}
+
+
+/* ==========================================================================
+   GABBY'S DOLLHOUSE THEMED CHARACTER NAVIGATION
+   ========================================================================== */
+
+.gabby-nav-container {
+  background-color: #16161a; /* MODIFIABLE INDICATOR: Changes backing deck block backdrop color */
+  border-radius: 12px;
+  padding: 25px 20px;
+  margin-bottom: 60px;
+  border: 2px dashed #ff007f; /* Playful dashed magenta perimeter context */
+  box-shadow: inset 0 0 15px rgba(255, 0, 127, 0.05);
+}
+
+.gabby-nav-title {
+  text-align: center;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+.gabby-character-menu {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.gabby-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+  width: 120px; /* MODIFIABLE INDICATOR: Dictates width block footprint constraints */
+}
+
+/* Base circular housing for avatars */
+.character-avatar-wrapper {
+  width: 85px;  /* MODIFIABLE INDICATOR: Scale your profile cutout frame shapes */
+  height: 85px;
+  border-radius: 50%;
+  background: #252529; /* Background backplate inside avatar circle */
+  border: 3px solid #333; /* Default framing ring */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Snappy pop-up animation curve */
+}
+
+.gabby-avatar {
+  width: 85%;
+  height: 85%;
+  object-fit: contain; /* Assures cartoon properties scale nicely inside without warping geometry */
+}
+
+.gabby-label {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-align: center;
+  transition: color 0.2s;
+}
+
+/* HOVER ANIMATIONS FOR THE CHARACTERS Menu Items */
+.gabby-nav-item:hover {
+  transform: translateY(-8px) scale(1.05); /* Whimsical bouncy pushup action */
+}
+
+/* Give unique neon border colors to each character circle on hover */
+.gabby-nav-item:hover .character-avatar-wrapper {
+  background-color: #1a1a24;
+}
+.gabby-nav-item:nth-child(1):hover .character-avatar-wrapper { border-color: #ff007f; box-shadow: 0 0 15px rgba(255, 0, 127, 0.6); } /* Pillow Cat */
+.gabby-nav-item:nth-child(2):hover .character-avatar-wrapper { border-color: #00ffff; box-shadow: 0 0 15px rgba(0, 255, 255, 0.6); } /* Baby Box */
+.gabby-nav-item:nth-child(3):hover .character-avatar-wrapper { border-color: #ff66cc; box-shadow: 0 0 15px rgba(255, 102, 204, 0.6); } /* Cakey */
+.gabby-nav-item:nth-child(4):hover .character-avatar-wrapper { border-color: #00adb5; box-shadow: 0 0 15px rgba(0, 173, 181, 0.6); } /* Kitty Fairy */
