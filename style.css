@@ -37,7 +37,6 @@ body {
 .navbar .logo {
     font-size: 24px;
     font-weight: bold;
-    color: var(--accent);
 }
 
 .navbar nav a {
@@ -68,9 +67,43 @@ body {
     margin-bottom: 15px;
 }
 
-.hero-content .highlight {
-    color: magenta;
+@import url('https://googleapis.com');
+
+.hero-left-intro .highlight {
+  /* Font styling */
+  font-family: 'VT323', monospace; /* A rounded, pixelated-style font */
+  font-size: 47px;
+  font-weight: bold;
+  
+  /* Layout & Typewriter setup */
+  display: inline-block;
+  white-space: nowrap;          /* Keeps the text on a single line */
+  overflow: hidden;             /* Hides the text as it reveals */
+  letter-spacing: 2px;
+  
+  /* Typing bar (Cursor) */
+  border-right: 3px dotted #000; /* Change color to match your design */
+  
+  /* Animations */
+  /* Adjust 3s to make it type faster or slower */
+  animation: 
+    typing 15s steps(50, end) infinite,
+    blink-cursor 3s step-end infinite;
 }
+
+/* The Typing Reveal Effect */
+@keyframes typing {
+  0%, 10% { width: 0; }           /* Holds at the start blank */
+  40%, 70% { width: 100%; }       /* Fully typed out and pauses to be read */
+  90%, 100% { width: 0; }         /* Disappears to loop again */
+}
+
+/* The Blinking Cursor Effect */
+@keyframes blink-cursor {
+  from, to { border-color: transparent }
+  50% { border-color: #000; }     /* Match your dotted line color here */
+}
+
 
 .highlight2 {
     color: #00ffff;
@@ -105,7 +138,7 @@ html, body {
 }
 
 .h2 {
-    color: magenta;  
+   /* color: magenta;  */
     text-align: center;
     margin-bottom: 20px;
 }
@@ -312,7 +345,7 @@ footer {
         gap: 10px;
     }
     .hero-content h1 {
-        font-size: 2rem;
+        font-size: 5rem;
     }
 }
 
@@ -404,12 +437,12 @@ footer {
   margin-top: 15px;
   font-size: 0.85rem;
   font-weight: bold;
-  color: magenta; /* Matching color schemes */
+  /* color: magenta; /* Matching color schemes */
   transition: color 0.2s;
 }
 
 .project-card:hover .card-arrow-indicator {
-  color: #00ffff; /* Alternates indicator values upon wrapper focus */
+  /*color: #00ffff; /* Alternates indicator values upon wrapper focus */
 }
 
 
@@ -420,9 +453,9 @@ footer {
 .gabby-nav-container {
   background-color: #16161a; /* MODIFIABLE INDICATOR: Changes backing deck block backdrop color */
   border-radius: 12px;
-  padding: 25px 20px;
+  padding: 50px 45px;
   margin-bottom: 60px;
-  border: 2px dashed #ff007f; /* Playful dashed magenta perimeter context */
+  border: 6px dashed #ff007f; /* Playful dashed magenta perimeter context */
   box-shadow: inset 0 0 15px rgba(255, 0, 127, 0.05);
 }
 
@@ -509,6 +542,8 @@ footer {
   background-color: var(--bg-dark); /* Keeps standard deep theme background */
 }
 
+
+
 /* LEFT SIDE: Brand Stylization */
 .hero-left-intro {
   flex: 1;
@@ -518,6 +553,8 @@ footer {
   gap: 15px;
 }
 
+
+
 .hero-title-row {
   display: flex;
   align-items: center;
@@ -525,11 +562,11 @@ footer {
 }
 
 .hero-title-row .hero-image {
-  width: 90px;  /* Downsized slightly to flow cleanly inside a horizontal subline layout */
-  height: 90px;
+  width: 150px;  /* Downsized slightly to flow cleanly inside a horizontal subline layout */
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #00ffff; /* Turquoise frame outline accent */
+ /* border: 2px solid #00ffff; /* Turquoise frame outline accent */
 }
 
 .split-hero-title {
@@ -544,6 +581,14 @@ footer {
   line-height: 1.6;
   color: var(--text-light);
   margin: 0;
+}
+
+.hero-split-description {
+    font-size: 1.5rem;
+    /* font-family: 'VT323', monospace; /* A rounded, pixelated-style font */
+    color: var(--text-muted);
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
 }
 
 /* Color Scheme Stylizations for Bio */
