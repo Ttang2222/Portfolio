@@ -318,17 +318,17 @@ html, body {
     color: #f443ce;            /* Sets arrow color */
 }
 
-  .image-row {
-    display: flex;
-    gap: 10px; /* Space between images */
-  }
+.image-row { 
+  display: flex; 
+  flex-wrap: wrap; /* This pushes images to the next line when they run out of space */
+  gap: 10px; /* Space between images */ 
+} 
 
-  .image-row img {
-    width: 200px;  /* Set your desired uniform width */
-    height: 200px; /* Set your desired uniform height */
-    gap: 10px; /* Space between images */
-    object-fit: contain; /* Crops image to fill the box without distortion */
-  }
+.image-row img { 
+  width: 200px; /* Set your desired uniform width */ 
+  height: 200px; /* Set your desired uniform height */ 
+  object-fit: contain; /* Prevents distortion by scaling the image to fit */ 
+}
 
 /* Footer */
 footer {
