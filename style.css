@@ -793,13 +793,13 @@ body.light-mode .hero-left-intro .highlight {
    ========================================================================== */
 
 body.light-mode .gabby-nav-container {
-  background-color: #ffffff;
+  background-color: #000000;
   border: 5px dashed #ff4fa3;
   box-shadow: 0 6px 20px rgba(255, 0, 127, 0.08);
 }
 
 body.light-mode .gabby-nav-title {
-  color: #333333;
+  color: #ffffff;
 }
 
 body.light-mode .character-avatar-wrapper {
