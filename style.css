@@ -452,6 +452,8 @@ footer {
 
 .gabby-nav-container {
   background-color: #16161a; /* MODIFIABLE INDICATOR: Changes backing deck block backdrop color */
+ 
+
   border-radius: 12px;
   padding: 50px 45px;
   margin-bottom: 60px;
@@ -883,6 +885,10 @@ body.light-mode .image-zoom-container {
 }
 
 
+
+
+
+
 /* ==========================================================================
    TRACK HEADERS
    ========================================================================== */
@@ -893,14 +899,17 @@ body.light-mode .track-header-zone {
 
 body.light-mode .track-title.color-human {
   color: #d9006c;
+  font-family: 'VT323', monospace;
 }
 
 body.light-mode .track-title.color-innovation {
   color: #008c95;
+   font-family: 'VT323', monospace;
 }
 
 body.light-mode .track-title.color-evaluation {
   color: #d94fae;
+   font-family: 'VT323', monospace;
 }
 
 body.light-mode .track-title.color-synthesis {
