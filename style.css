@@ -24,20 +24,22 @@ body {
 
 /* Header/Navigation */
 .navbar {
+  
    /* 1. Set the path to your image (local folder path or absolute web URL) */
-  background-image: url('gabbybg1.jpg');
+  background-image: url('gabbybg2.jpeg');
 
   /* 2. Prevent the image from repeating like a tile grid */
-  background-repeat: no-repeat;
+ background-repeat: no-repeat;
 
   /* 3. Center the image horizontally and vertically */
-  background-position: center;
+background-position: center;
 
   /* 4. Scale the image to completely cover the container proportionally */
-  background-size: cover;
+ background-size: cover;
 
   /* 5. Set a fallback color in case the image fails to load */
   background-color: #f0f0f0;
+  
 
     display: flex;
     justify-content: space-between;
@@ -296,7 +298,7 @@ html, body {
 
 /* Contact Section */
 .contact-section {
-    padding: 80px 20px;
+    padding: 50px 20px;
     text-align: center;
     background-color: var(--card-bg);
 }
@@ -356,15 +358,47 @@ footer {
 }
 
 /* Mobile Responsiveness */
-@media (max-width: 600px) {
-    .navbar {
-        flex-direction: column;
-        gap: 10px;
-    }
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINT
+   ========================================================================== */
+ @media (max-width: 1024px) {
+  .hero-split-container {
+    flex-direction: column; /* Stacks layout elements on mobile/tablets cleanly */
+    gap: 30px;
+  }
+  .hero-left-intro, .split-nav-box {
+    max-width: 100%;
+    width: 100%;
+  }
+  .horizontal-menu {
+    display: flex !important;
+    flex-direction: row !important;
+    /* Keeps spacing uniform on tablet screen sizes */
+    justify-content: space-around !important; 
+    /* 1. Aligns the bottom baselines of everything in the menu row */
+    align-items: flex-end !important; 
+    flex-wrap: nowrap !important;
+    gap: 4px !important;
+  }
+  .gabby-horizontal-arrow {
+    color: #f443ce;
+    font-size: 18px;
+    font-weight: bold;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 2. Clears old manual top spacing overrides */
+    margin-top: 0 !important; 
+    /* 3. Pulls the arrow up into the text baseline zone on smaller viewports */
+    margin-bottom: 22px !important; 
+  }
+}
+
     .hero-content h1 {
         font-size: 5rem;
     }
-}
+
 
 
 
@@ -470,18 +504,18 @@ footer {
 .gabby-nav-container {
   background-color: #ffffff; /* MODIFIABLE INDICATOR: Changes backing deck block backdrop color */
   border-radius: 12px;
-  padding: 50px 45px;
+  padding: 65px 55px;
   margin-bottom: 60px;
-  border: 6px dashed #ff007f; /* Playful dashed magenta perimeter context */
+  border: 1px dashed #ff007f; /* Playful dashed magenta perimeter context */
   box-shadow: inset 0 0 15px rgba(255, 0, 127, 0.05);
 }
 
 .gabby-nav-title {
   text-align: center;
   font-family: 'VT323', monospace;
-  font-weight: 600;
+  font-weight: bold;
   margin: 0 0 20px 0;
-  font-size: 1.1rem;
+  font-size: 1.0rem;
   letter-spacing: 0.7px;
   color: #000000;
 }
@@ -527,9 +561,28 @@ footer {
   margin-top: 10px;
   font-family: 'VT323', monospace;
   font-size: 3.0rem;
-  font-weight: bold;
+  font-weight: bolder;
   text-align: center;
   transition: color 0.2s;
+
+}
+
+.compact-item:hover .gabby-label-color-human:hover {
+  color: #ff007f; /* Magenta */
+  text-shadow: 4px 4px 8px rgba(255, 0, 127, 0.3); /* Subtle magenta glow */
+  font-family: 'VT323', monospace;
+}
+
+.compact-item:hover .gabby-label-color-innovation:hover {
+  color: #00ffff; /* Turquoise */
+  text-shadow: 4px 4px 8px rgba(0, 255, 255, 0.3); /* Subtle turquoise glow */
+  font-family: 'VT323', monospace;
+}
+
+.compact-item:hover .gabby-label-color-evaluation:hover {
+  color: #ff66cc; /* Bright Pink */
+  text-shadow: 4px 4px 8px rgba(255, 102, 204, 0.3); /* Subtle pink glow */
+  font-family:'VT323', monospace;
 }
 
 /* HOVER ANIMATIONS FOR THE CHARACTERS Menu Items */
@@ -588,8 +641,8 @@ footer {
 .split-hero-title {
   font-size: 2.0rem;
   margin: 0;
-  font-weight: 800;
-  letter-spacing: 0.5px;
+  font-weight: ;
+  letter-spacing: 0.08px;
 }
 
 .hero-split-description {
@@ -597,14 +650,18 @@ footer {
   line-height: 1.6;
   color: var(--text-light);
   margin: 0;
+  align-items: center;
 }
 
 .hero-split-description {
-    font-size: 1.1rem;
+    font-size: 1.0rem;
     /* font-family: 'VT323', monospace; /* A rounded, pixelated-style font */
     color: var(--text-muted);
     max-width: 1200px;
-    margin: 0 0px 0px 0px;
+    margin: 0 5px 0px 0px;
+    margin-top: 1px;
+    align-items: center;
+    line-height: 1.4;
 }
 
 /* Color Scheme Stylizations for Bio */
@@ -652,14 +709,15 @@ footer {
 }
 
 .compact-item .gabby-label {
-  margin-top: 8px;
-  font-size: 0.85rem !important;
+  margin-top: 10px;
+  font-size: 1.0rem !important;
   font-weight: bold;
   text-align: normal;
   /* CHANGE THIS: 'normal' allows text to break onto new lines naturally */
   white-space: normal !important; 
   line-height: 1.7;
   width: 100%;
+  font-family:'VT323', monospace;
 }
 
 /* Horizontal Centered Connecting Arrows */
@@ -679,6 +737,9 @@ footer {
 /* ==========================================================================
    RESPONSIVE DESIGN BREAKPOINT
    ========================================================================== */
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINT
+   ========================================================================== */
 @media (max-width: 1024px) {
   .hero-split-container {
     flex-direction: column; /* Stacks layout elements on mobile/tablets cleanly */
@@ -688,15 +749,41 @@ footer {
     max-width: 100%;
     width: 100%;
   }
+  .horizontal-menu {
+    display: flex !important;
+    flex-direction: row !important;
+    /* Keeps spacing uniform on tablet screen sizes */
+    justify-content: space-around !important; 
+    /* 1. Aligns the bottom baselines of everything in the menu row */
+    align-items: flex-end !important; 
+    flex-wrap: nowrap !important;
+    gap: 4px !important;
+  }
+  .gabby-horizontal-arrow {
+    color: #f443ce;
+    font-size: 18px;
+    font-weight: bold;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 2. Clears old manual top spacing overrides */
+    margin-top: 0 !important; 
+    /* 3. Pulls the arrow up into the text baseline zone on smaller viewports */
+    margin-bottom: 22px !important; 
+  }
+
 .horizontal-menu {
   display: flex !important;
   flex-direction: row !important;
-  /* CHANGE THIS: space-between or space-around keeps spacing uniform */
   justify-content: space-around !important; 
-  align-items: flex-start !important; /* Aligns the tops of the circles cleanly */
+  /* 1. Push everything to sit on the same bottom baseline */
+  align-items: flex-end !important; 
   flex-wrap: nowrap !important;
   gap: 4px !important;
 }
+
+/* Horizontal Centered Connecting Arrows */
 .gabby-horizontal-arrow {
   color: #f443ce;
   font-size: 18px;
@@ -705,9 +792,14 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* CHANGE THIS: Shifts the arrow vertically so it aligns with the avatar circles, not the text */
-  margin-top: 22px; 
-}
+  /* 2. Clear any old top margins entirely */
+  margin-top: 0 !important;
+  /* 3. Pull the arrow slightly up up from the absolute bottom to land in the text sweet spot.
+        Adjust this value (e.g., -15px to -30px) depending on your font size! */
+  margin-bottom: 22px !important; 
+}@media
+
+
 
 }
 .gabby-nav-item:nth-child(1):hover .character-avatar-wrapper { border-color: #ff007f; box-shadow: 0 0 15px rgba(255, 0, 127, 0.6); } /* Pillow Cat */
@@ -767,6 +859,7 @@ body.light-mode .hero-split-container {
 
 body.light-mode .split-hero-title {
   color: #222222;
+  font-weight:2000;
 }
 
 body.light-mode .hero-split-description {
@@ -804,6 +897,41 @@ body.light-mode .hero-left-intro .highlight {
   animation-name: typing, blink-cursor;
 }
 
+.intro-keyword-human {
+  font-size:larger;
+  font-family: 'VT323', monospace;
+  letter-spacing: 3px;
+  color: #d9006c;
+  text-shadow: 
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px  1px 0 #000,  
+     1px  1px 0 #000; /* Creates a 1px black outline */
+}
+
+.intro-keyword-nano {
+  font-size:larger;
+  font-family: 'VT323', monospace;
+  letter-spacing: 3px;
+  color: #79e4eb;
+  text-shadow: 
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px  1px 0 #000,  
+     1px  1px 0 #000; /* Creates a 1px black outline */
+}
+
+.intro-keyword-ux {
+  font-size:larger;
+  font-family: 'VT323', monospace;
+  letter-spacing: 3px;
+  color: #d94fae;
+  text-shadow: 
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px  1px 0 #000,  
+     1px  1px 0 #000; /* Creates a 1px black outline */
+}
 
 /* ==========================================================================
    GABBY'S DOLLHOUSE NAVIGATION
@@ -811,12 +939,16 @@ body.light-mode .hero-left-intro .highlight {
 
 body.light-mode .gabby-nav-container {
   background-color: #ffffff;
-  border: 5px dashed #ff4fa3;
+  font-weight: bold;
+  border: 4px dashed #000000;
   box-shadow: 0 6px 20px rgba(255, 0, 127, 0.08);
+  padding: 80px 55px;
+  margin-bottom: 60px;
 }
 
 body.light-mode .gabby-nav-title {
   color: #000000;
+  font-size: 1.2rem;
 }
 
 body.light-mode .character-avatar-wrapper {
@@ -835,7 +967,7 @@ body.light-mode .color-human {
 }
 
 body.light-mode .color-innovation {
-  color: #008c95;
+  color: #79e4eb;
 }
 
 body.light-mode .color-evaluation {
@@ -989,9 +1121,16 @@ body.light-mode .badge-difficult {
    ========================================================================== */
 
 body.light-mode .contact-section {
+  
   background-color: #ffffff;
+
   border-top: 1px solid #eeeeee;
   font-family:"VT323", monospace;
+  border-radius: 12px;
+padding: 40px 45px;
+  margin-bottom: 60px;
+  border: 4px dashed #000000; /* Playful dashed magenta perimeter context */
+  box-shadow: inset 0 0 15px rgba(255, 0, 127, 0.05);
 
 }
 
