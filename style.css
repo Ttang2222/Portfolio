@@ -567,6 +567,21 @@ footer {
 
 }
 
+.compact-item .gabby-label-color-human:link {
+  color: #ff007f; /* Magenta */
+  font-family: 'VT323', monospace;
+}
+
+.compact-item .gabby-label-color-innovation:link {
+  color: #00ffff; /* Turquoise */
+  font-family: 'VT323', monospace;
+}
+
+.compact-item .gabby-label-color-evaluation:link {
+  color: #ff66cc; /* Bright Pink */
+  font-family: 'VT323', monospace;
+}
+
 .compact-item:hover .gabby-label-color-human:hover {
   color: #ff007f; /* Magenta */
   text-shadow: 4px 4px 8px rgba(255, 0, 127, 0.3); /* Subtle magenta glow */
