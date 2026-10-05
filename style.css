@@ -24,6 +24,21 @@ body {
 
 /* Header/Navigation */
 .navbar {
+   /* 1. Set the path to your image (local folder path or absolute web URL) */
+  background-image: url('gabbybg1.jpg');
+
+  /* 2. Prevent the image from repeating like a tile grid */
+  background-repeat: no-repeat;
+
+  /* 3. Center the image horizontally and vertically */
+  background-position: center;
+
+  /* 4. Scale the image to completely cover the container proportionally */
+  background-size: cover;
+
+  /* 5. Set a fallback color in case the image fails to load */
+  background-color: #f0f0f0;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,6 +59,7 @@ body {
     text-decoration: none;
     margin-left: 10px;
     transition: color 0.3s;
+    font-family:"VT323", monospace;
 }
 
 .navbar nav a:hover {
@@ -151,6 +167,7 @@ html, body {
     text-align: center;
     margin-bottom: 40px;
     font-size: 2rem;
+    font-family:"VT323", monospace;
 }
 
 .projects-grid {
@@ -451,9 +468,7 @@ footer {
    ========================================================================== */
 
 .gabby-nav-container {
-  background-color: #16161a; /* MODIFIABLE INDICATOR: Changes backing deck block backdrop color */
- 
-
+  background-color: #ffffff; /* MODIFIABLE INDICATOR: Changes backing deck block backdrop color */
   border-radius: 12px;
   padding: 50px 45px;
   margin-bottom: 60px;
@@ -467,8 +482,8 @@ footer {
   font-weight: 600;
   margin: 0 0 20px 0;
   font-size: 1.1rem;
-  letter-spacing: 1px;
-  color: #ffffff;
+  letter-spacing: 0.7px;
+  color: #000000;
 }
 
 .gabby-character-menu {
@@ -795,13 +810,13 @@ body.light-mode .hero-left-intro .highlight {
    ========================================================================== */
 
 body.light-mode .gabby-nav-container {
-  background-color: #000000;
+  background-color: #ffffff;
   border: 5px dashed #ff4fa3;
   box-shadow: 0 6px 20px rgba(255, 0, 127, 0.08);
 }
 
 body.light-mode .gabby-nav-title {
-  color: #ffffff;
+  color: #000000;
 }
 
 body.light-mode .character-avatar-wrapper {
@@ -844,6 +859,7 @@ body.light-mode .gabby-horizontal-arrow {
 
 body.light-mode .projects-section {
   background-color: #f8fafc;
+  font-family:"VT323", monospace;
 }
 
 body.light-mode .section-intro {
@@ -975,10 +991,13 @@ body.light-mode .badge-difficult {
 body.light-mode .contact-section {
   background-color: #ffffff;
   border-top: 1px solid #eeeeee;
+  font-family:"VT323", monospace;
+
 }
 
 body.light-mode .contact-section h2 {
   color: #222222;
+  font-family:"VT323", monospace;
 }
 
 body.light-mode .contact-section p {
@@ -987,10 +1006,12 @@ body.light-mode .contact-section p {
 
 body.light-mode .contact-links a {
   color: #008c95;
+  font-family:"VT323", monospace;
 }
 
 body.light-mode .contact-links a:hover {
   color: #d9006c;
+  font-family:"VT323", monospace;
 }
 
 
