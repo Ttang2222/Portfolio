@@ -234,7 +234,7 @@ html, body {
     color: #000000;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-weight: 700;
+    font-weight: 500;
     padding: 14px 18px;
     text-align: left;
     font-size: 0.95rem;
@@ -415,6 +415,7 @@ footer {
   max-width: 1000px;
   margin: -20px auto 40px auto;
   color: var(--text-muted);
+  font-weight: bold;
 }
 
 .portfolio-track-block {
@@ -434,7 +435,7 @@ footer {
 }
 
 /* Base track branding colors (incorporating magenta, pink, turquoise) */
-.color-human { color: #ff007f; }       /* Magenta */
+.color-human { color: #d95dd7; }       /* Magenta */
 .color-innovation { color: #00ffff; }  /* Turquoise / Cyan */
 .color-evaluation { color: #ff66cc; }  /* Bright Pink */
 .color-synthesis { color: #00adb5; }   /* Muted Turquoise Variable */
@@ -506,7 +507,7 @@ footer {
   border-radius: 12px;
   padding: 65px 55px;
   margin-bottom: 60px;
-  border: 1px dashed #ff007f; /* Playful dashed magenta perimeter context */
+  border: 1px dashed #fcfcfc; /* Playful dashed magenta perimeter context */
   box-shadow: inset 0 0 15px rgba(255, 0, 127, 0.05);
 }
 
@@ -534,7 +535,8 @@ footer {
   text-decoration: none;
   transition: transform 0.2s ease;
   cursor: pointer;
-  width: 120px; /* MODIFIABLE INDICATOR: Dictates width block footprint constraints */
+  width: 160px; /* MODIFIABLE INDICATOR: Dictates width block footprint constraints */
+  font-family: 'VT323', monospace;
 }
 
 /* Base circular housing for avatars */
@@ -567,37 +569,44 @@ footer {
 
 }
 
-.compact-item .gabby-label-color-human:link {
-  color: #ff007f; /* Magenta */
+.gabby-label-color-human {
+  color: #d95dd7; /* Purple */
   font-family: 'VT323', monospace;
+  max-width: 100%;
+  
 }
 
-.compact-item .gabby-label-color-innovation:link {
-  color: #00ffff; /* Turquoise */
+.gabby-label-color-innovation {
+  color: rgb(65, 219, 203); /* Turquoise */
   font-family: 'VT323', monospace;
+  max-width: 100%;
 }
 
-.compact-item .gabby-label-color-evaluation:link {
+.gabby-label-color-evaluation {
   color: #ff66cc; /* Bright Pink */
   font-family: 'VT323', monospace;
+  max-width: 100%;
 }
 
-.compact-item:hover .gabby-label-color-human:hover {
-  color: #ff007f; /* Magenta */
-  text-shadow: 4px 4px 8px rgba(255, 0, 127, 0.3); /* Subtle magenta glow */
+.gabby-label-color-human:hover {
+  color: #ff1ffb; /* Purple */
+  text-shadow: 4px 4px 8px rgba(247, 148, 245, 0.3); /* Subtle purple glow */
   font-family: 'VT323', monospace;
+  max-width: 100%;
 }
 
-.compact-item:hover .gabby-label-color-innovation:hover {
-  color: #00ffff; /* Turquoise */
+.gabby-label-color-innovation:hover {
+  color: #84f7ff; /* Turquoise */
   text-shadow: 4px 4px 8px rgba(0, 255, 255, 0.3); /* Subtle turquoise glow */
   font-family: 'VT323', monospace;
+  max-width: 100%;
 }
 
-.compact-item:hover .gabby-label-color-evaluation:hover {
-  color: #ff66cc; /* Bright Pink */
-  text-shadow: 4px 4px 8px rgba(255, 102, 204, 0.3); /* Subtle pink glow */
+.gabby-label-color-evaluation:hover {
+  color: #ff32bb; /* Bright Pink */
+  text-shadow: 4px 4px 8px rgba(223, 60, 168, 0.3); /* Subtle pink glow */
   font-family:'VT323', monospace;
+  max-width: 100%;
 }
 
 /* HOVER ANIMATIONS FOR THE CHARACTERS Menu Items */
@@ -624,6 +633,8 @@ footer {
   gap: 40px;
   padding: 60px 8%;
   background-color: var(--bg-dark); /* Keeps standard deep theme background */
+  font-weight: 500;
+  letter-spacing: 1.5px;
 }
 
 
@@ -656,7 +667,7 @@ footer {
 .split-hero-title {
   font-size: 2.0rem;
   margin: 0;
-  font-weight: ;
+  font-weight: 700;
   letter-spacing: 0.08px;
 }
 
@@ -712,7 +723,7 @@ footer {
 .compact-item {
   /* CHANGE THIS: Changing from 90px to auto lets the item expand gently */
   width: auto !important; 
-  max-width: 110px; /* Optional cap to prevent any single icon column from getting too wide */
+  max-width: 160px; /* Optional cap to prevent any single icon column from getting too wide */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -737,7 +748,7 @@ footer {
 
 /* Horizontal Centered Connecting Arrows */
 .gabby-horizontal-arrow {
-  color: #f443ce;
+  color: #000000;
   font-size: 18px;
   font-weight: bold;
   user-select: none;
@@ -775,7 +786,7 @@ footer {
     gap: 4px !important;
   }
   .gabby-horizontal-arrow {
-    color: #f443ce;
+    color: #000000;
     font-size: 18px;
     font-weight: bold;
     user-select: none;
@@ -800,7 +811,7 @@ footer {
 
 /* Horizontal Centered Connecting Arrows */
 .gabby-horizontal-arrow {
-  color: #f443ce;
+  color: #000000;
   font-size: 18px;
   font-weight: bold;
   user-select: none;
@@ -817,9 +828,9 @@ footer {
 
 
 }
-.gabby-nav-item:nth-child(1):hover .character-avatar-wrapper { border-color: #ff007f; box-shadow: 0 0 15px rgba(255, 0, 127, 0.6); } /* Pillow Cat */
+.gabby-nav-item:nth-child(1):hover .character-avatar-wrapper { border-color: #d95dd7; box-shadow: 0 0 15px rgba(217, 93, 215, 0.6); } /* Pillow Cat */
 .gabby-nav-item:nth-child(3):hover .character-avatar-wrapper { border-color: #00ffff; box-shadow: 0 0 15px rgba(0, 255, 255, 0.6); } /* Baby Box */
-.gabby-nav-item:nth-child(5):hover .character-avatar-wrapper { border-color: #fb67ca; box-shadow: 0 0 15px rgba(255, 102, 204, 0.6); } /* Cakey */
+.gabby-nav-item:nth-child(5):hover .character-avatar-wrapper { border-color: #ff99dd; box-shadow: 0 0 15px rgba(255, 102, 204, 0.6); } /* Cakey */
 .gabby-nav-item:nth-child(7):hover .character-avatar-wrapper { border-color: #00adb5; box-shadow: 0 0 15px rgba(0, 173, 181, 0.6); } /* Kitty Fairy */
 
 
@@ -849,6 +860,21 @@ body.light-mode .navbar {
   background-color: rgba(255, 255, 255, 0.96);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   border-bottom: 1px solid #eeeeee;
+
+   /* 1. Set the path to your image (local folder path or absolute web URL) */
+  background-image: url('gabbybg1.jpg');
+
+  /* 2. Prevent the image from repeating like a tile grid */
+ background-repeat: no-repeat;
+
+  /* 3. Center the image horizontally and vertically */
+background-position: center;
+
+  /* 4. Scale the image to completely cover the container proportionally */
+ background-size: cover;
+
+  /* 5. Set a fallback color in case the image fails to load */
+  background-color: #f0f0f0;
 }
 
 body.light-mode .navbar .logo {
@@ -916,7 +942,7 @@ body.light-mode .hero-left-intro .highlight {
   font-size:larger;
   font-family: 'VT323', monospace;
   letter-spacing: 3px;
-  color: #d9006c;
+  color: #d95dd7;
   text-shadow: 
     -1px -1px 0 #000,  
      1px -1px 0 #000,
@@ -928,7 +954,7 @@ body.light-mode .hero-left-intro .highlight {
   font-size:larger;
   font-family: 'VT323', monospace;
   letter-spacing: 3px;
-  color: #79e4eb;
+  color: turquoise;
   text-shadow: 
     -1px -1px 0 #000,  
      1px -1px 0 #000,
@@ -953,17 +979,19 @@ body.light-mode .hero-left-intro .highlight {
    ========================================================================== */
 
 body.light-mode .gabby-nav-container {
-  background-color: #ffffff;
+   background-color:white;
+
   font-weight: bold;
   border: 4px dashed #000000;
   box-shadow: 0 6px 20px rgba(255, 0, 127, 0.08);
-  padding: 80px 55px;
+  padding: 80px 60px;
   margin-bottom: 60px;
 }
 
 body.light-mode .gabby-nav-title {
   color: #000000;
   font-size: 1.2rem;
+  font-weight:bolder;
 }
 
 body.light-mode .character-avatar-wrapper {
@@ -978,11 +1006,11 @@ body.light-mode .gabby-nav-item:hover .character-avatar-wrapper {
 
 /* Navigation character labels */
 body.light-mode .color-human {
-  color: #d9006c;
+  color: #d95dd7;
 }
 
 body.light-mode .color-innovation {
-  color: #79e4eb;
+  color: #4ab7be;
 }
 
 body.light-mode .color-evaluation {
@@ -996,7 +1024,7 @@ body.light-mode .color-synthesis {
 
 /* Connecting arrows */
 body.light-mode .gabby-horizontal-arrow {
-  color: #e83d91;
+  color: #000000;
 }
 
 
@@ -1011,6 +1039,7 @@ body.light-mode .projects-section {
 
 body.light-mode .section-intro {
   color: #5f6368;
+  font-weight:bold;
 }
 
 body.light-mode .track-desc {
@@ -1027,6 +1056,7 @@ body.light-mode .projects-grid .project-card {
 body.light-mode .projects-grid .project-card:hover {
   border-color: var(--accent);
   box-shadow: 0 10px 25px rgba(0, 163, 173, 0.14);
+  
 }
 
 body.light-mode .card-info h3 {
@@ -1061,12 +1091,12 @@ body.light-mode .track-header-zone {
 }
 
 body.light-mode .track-title.color-human {
-  color: #d9006c;
+  color: #d95dd7;
   font-family: 'VT323', monospace;
 }
 
 body.light-mode .track-title.color-innovation {
-  color: #008c95;
+  color: #79e4eb;
    font-family: 'VT323', monospace;
 }
 
