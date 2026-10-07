@@ -880,6 +880,7 @@ background-position: center;
 
 body.light-mode .navbar .logo {
   color: #222222;
+  font-size: 23px;
 }
 
 body.light-mode .navbar nav a {
@@ -890,6 +891,12 @@ body.light-mode .navbar nav a:hover {
   color: #d9006c;
 }
 
+.navbar-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size:large
+}
 
 /* ==========================================================================
    HERO / INTRODUCTION
