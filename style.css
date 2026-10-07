@@ -518,7 +518,7 @@ footer {
   font-weight: bold;
   margin: 0 0 20px 0;
   font-size: 1.0rem;
-  letter-spacing: 0.7px;
+  letter-spacing: 0.4px;
   color: #000000;
 }
 
@@ -561,12 +561,13 @@ footer {
 }
 
 .gabby-label {
-  margin-top: 10px;
+  margin-top: 15px;
   font-family: 'VT323', monospace;
   font-size: 3.0rem;
   font-weight: bolder;
   text-align: center;
   transition: color 0.2s;
+  letter-spacing:normal;
 
 }
 
@@ -574,6 +575,8 @@ footer {
   color: #d95dd7; /* Purple */
   font-family: 'VT323', monospace;
   max-width: 100%;
+  letter-spacing: 0.4px;
+  margin-top: 13px;
   
 }
 
@@ -581,12 +584,16 @@ footer {
   color: rgb(65, 219, 203); /* Turquoise */
   font-family: 'VT323', monospace;
   max-width: 100%;
+  letter-spacing: 0.4px;
+  margin-top: 13px;
 }
 
 .gabby-label-color-evaluation {
   color: #ff66cc; /* Bright Pink */
   font-family: 'VT323', monospace;
   max-width: 100%;
+  letter-spacing: 0.4px;
+  margin-top: 13px;
 }
 
 .gabby-label-color-human:hover {
@@ -689,6 +696,7 @@ footer {
     margin-top: 1px;
     align-items: center;
     line-height: 1.4;
+    letter-spacing:normal;
 }
 
 /* Color Scheme Stylizations for Bio */
@@ -990,7 +998,7 @@ body.light-mode .gabby-nav-container {
    background-color:white;
 
   font-weight: bold;
-  border: 4px dashed #000000;
+  border: 4px dashed #7fd1da;
   box-shadow: 0 6px 20px rgba(255, 0, 127, 0.08);
   padding: 80px 60px;
   margin-bottom: 60px;
