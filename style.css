@@ -864,7 +864,20 @@ body.light-mode {
   --accent: #00a3ad;
 
   background-color: var(--bg-dark);
+  /* 1. Set the path to your image (local folder path or absolute web URL) */
+ /background-image: url('gabbybg1.jpg');
 
+  /* 2. Prevent the image from repeating like a tile grid */
+ background-repeat: no-repeat;
+
+  /* 3. Center the image horizontally and vertically */
+background-position: center;
+
+  /* 4. Scale the image to completely cover the container proportionally */
+ background-size: cover;
+
+  /* 5. Set a fallback color in case the image fails to load */
+ background-color: #f0f0f0;
   
   color: var(--text-light);
 }
@@ -1059,7 +1072,8 @@ body.light-mode .gabby-horizontal-arrow {
    SELECTED WORK / PROJECT CARDS
    ========================================================================== */
 
-body.light-mode .projects-section {
+
+   body.light-mode .projects-section {
   background-color: #f8fafc;
   font-family:"VT323", monospace;
 }
