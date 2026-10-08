@@ -170,6 +170,7 @@ html, body {
     margin-bottom: 40px;
     font-size: 2rem;
     font-family:"VT323", monospace;
+    font-weight: bold;
 }
 
 .projects-grid {
@@ -302,6 +303,7 @@ html, body {
     padding: 50px 20px;
     text-align: center;
     background-color: var(--card-bg);
+
 }
 
 .contact-section h2 {
@@ -520,6 +522,7 @@ footer {
   font-size: 1.0rem;
   letter-spacing: 0.4px;
   color: #000000;
+  text-shadow: 0 0 5px rgba(255, 0, 127, 0.2); /* Subtle magenta glow */
 }
 
 .gabby-character-menu {
@@ -577,6 +580,7 @@ footer {
   max-width: 100%;
   letter-spacing: 0.4px;
   margin-top: 13px;
+  text-shadow: 0 0 5px rgba(217, 93, 215, 0.3); /* Subtle purple glow */
   
 }
 
@@ -586,6 +590,7 @@ footer {
   max-width: 100%;
   letter-spacing: 0.4px;
   margin-top: 13px;
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.3); /* Subtle turquoise glow */
 }
 
 .gabby-label-color-evaluation {
@@ -594,6 +599,7 @@ footer {
   max-width: 100%;
   letter-spacing: 0.4px;
   margin-top: 13px;
+  text-shadow: 0 0 5px rgba(255, 102, 204, 0.3); /* Subtle pink glow */
 }
 
 .gabby-label-color-human:hover {
@@ -690,7 +696,8 @@ footer {
 .hero-split-description {
     font-size: 1.0rem;
     /* font-family: 'VT323', monospace; /* A rounded, pixelated-style font */
-    color: var(--text-muted);
+    color: var(--text-light);
+    color:black;
     max-width: 1200px;
     margin: 0 5px 0px 0px;
     margin-top: 1px;
@@ -857,6 +864,8 @@ body.light-mode {
   --accent: #00a3ad;
 
   background-color: var(--bg-dark);
+
+  
   color: var(--text-light);
 }
 
@@ -870,20 +879,22 @@ body.light-mode .navbar {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   border-bottom: 1px solid #eeeeee;
 
+  
    /* 1. Set the path to your image (local folder path or absolute web URL) */
-  background-image: url('gabbybg1.jpg');
+ /* background-image: url('gabbybg1.jpg');
 
   /* 2. Prevent the image from repeating like a tile grid */
- background-repeat: no-repeat;
+ /*background-repeat: no-repeat;
 
   /* 3. Center the image horizontally and vertically */
-background-position: center;
+/*background-position: center;
 
   /* 4. Scale the image to completely cover the container proportionally */
- background-size: cover;
+ /*background-size: cover;
 
   /* 5. Set a fallback color in case the image fails to load */
-  background-color: #f0f0f0;
+ /* background-color: #f0f0f0;*/
+  
 }
 
 body.light-mode .navbar .logo {
@@ -920,7 +931,7 @@ body.light-mode .split-hero-title {
 }
 
 body.light-mode .hero-split-description {
-  color: #4f555b;
+  color: #000000;
 }
 
 
@@ -998,7 +1009,7 @@ body.light-mode .gabby-nav-container {
    background-color:white;
 
   font-weight: bold;
-  border: 4px dashed #7fd1da;
+  border: 4px dashed #d5e9eb;
   box-shadow: 0 6px 20px rgba(255, 0, 127, 0.08);
   padding: 80px 60px;
   margin-bottom: 60px;
