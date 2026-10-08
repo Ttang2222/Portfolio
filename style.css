@@ -347,8 +347,7 @@ html, body {
 } 
 
 .image-row img { 
-  width: 200px; /* Set your desired uniform width */ 
-  height: 200px; /* Set your desired uniform height */ 
+  width: 500px; /* Set your desired uniform width */ 
   object-fit: contain; /* Prevents distortion by scaling the image to fit */ 
 }
 
