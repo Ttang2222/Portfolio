@@ -43,12 +43,12 @@
     <div>
         <h2>2. STAKEHOLDERS & MAPPING THE PROCESS</h2>
         <img src="all stakeholders.PNG" alt="all stakeholders" width="50%">
-        <p>Initially, the way our team wanted to view the problem was through the lens of primary stakeholders, which are the immediate water users. However, we figured it would be difficult to address the water hardness issue with this approach, as our solution ultimately might not be easily accessible or interesting enough for normal water users to employ in their day to day lives. Luckily we thought through this before our actual user testing.</p>
+        <p>Initially, the way our team wanted to view the problem was through the lens of primary stakeholders, which are the immediate water users. However, we figured it would be difficult to address the water hardness issue with this approach, as our solution ultimately may give rise to lower usability and accessibility for normal water users to employ in their day to day lives. Luckily, we thought through this point before our user testing phase.</p>
     </section>
 
     <section>
         <h2>3. BRAINSTORMING: STORYBOARDING & SKETCHING</h2>
-        <div> <p>Each member in our team had their own 9-step storyboarding process, which is laid out in Miro with three phases:
+        <div> <p>Each member in our team had their own 9-step storyboarding process, which is laid out in Miro and spread across three phases:
         <ol>
             <li><strong>Connect:</strong> Building Partnerships & Planning</li>
             <li><strong>Treat:</strong> Optimize Chemical Water Softening</li>
@@ -68,7 +68,7 @@
         <img src="narrow down to building.PNG" alt="narrow down to building" width="50%">
         <p>Following our brainstorming and storyboarding phases, our team shifted away from a region-centric model to adopt a targeted, building-by-building approach. This strategy allowed us to tailor solutions to the specific infrastructure and needs of each facility, making the system much more feasible to design, implement, and manage within our strict course timeline.
 
-By focusing on individual sites, we empowered building managers with intuitive tools to monitor water hardness effectively, thereby improving water quality and reducing long-term maintenance costs. To support prototyping and user testing within scope, we developed an interactive online dashboard tailored specifically for these managers, making it straightforward to evaluate user interaction and scale our solution.
+By focusing on individual sites, we empower building managers with intuitive tools to monitor water hardness effectively, thereby improving water quality and reducing long-term maintenance costs. To support prototyping and user testing within scope, we developed an interactive online dashboard tailored specifically for these managers, making it straightforward to evaluate user interaction and scale our solution.
 
 Online dashboard for property
 managers -> helps with scaling
@@ -77,7 +77,7 @@ up​
 
 <section>
     <h2>5. FINAL SOLUTION</h2>
-        <p>The final solution involves the implementation of three real-time hardware sensors (brine level, conductivity, flow rate), connected through an IoT infrastrucutre to the SmartSoft prototype app. Building management or facility teams will have access to water quality measurements in-real-time.</p>
+        <p>The final solution involves the implementation of three real-time hardware sensors (brine level, conductivity, flow rate), connected through an IoT infrastrucutre to the SmartSoft prototype app. Building management or facility teams will have access to water quality measurements in real-time.</p>
     <img src="iot-system-architecture.PNG" alt="IoT System Architecture" width="50%"></p>
     <div>
     <h3>APP PROTOTYPE: SMARTSOFT</h3>
@@ -112,7 +112,7 @@ up​
     </section></div>
 <section>
         <h4>Flow Rate Sensor</h4>
-        <p>The flow rate sensor measures the rate of water entering the water softener, providing information about how much water is passing through the system over time.The flow rate sensor continuously monitors the volumetric flow of incoming hard, unsoftened water (ground or surface water) entering the treatment system. While standard environmental sensors provide baseline metrics, the flow rate sensor serves as the primary operational safeguard for system capacity and data validation.
+        <p>The flow rate sensor measures the rate of water entering the water softener, providing information about how much water is passing through the system over time. The flow rate sensor continuously monitors the volumetric flow of incoming hard, unsoftened water (ground or surface water) entering the treatment system. While standard environmental sensors provide baseline metrics, the flow rate sensor serves as the primary operational safeguard for system capacity and data validation.
     
     </div>
     <div>
@@ -140,10 +140,10 @@ up​
 
             <p>The brine level sensor monitors the salt and brine supply inside the softener’s brine tank to help ensure that regeneration can occur properly. If the brine level becomes too low, the system can alert building management before the softener begins producing hard water.
 
-            <strong>How it works</strong>
-            A float is positioned vertically inside the brine tank and moves up and down with the brine level. A magnetic reed switch detects the float's position and produces a simple digital signal (0/1). When the float drops below a defined level, the signal is sent to the IoT controller, which can trigger a low-level alert on the building management dashboard.
-
-            <strong>Sensor options considered</strong>
+            <div><strong>How it works:</strong> A float is positioned vertically inside the brine tank and moves up and down with the brine level. A magnetic reed switch detects the float's position and produces a simple digital signal (0/1). When the float drops below a defined level, the signal is sent to the IoT controller, which can trigger a low-level alert on the building management dashboard.
+            </div>
+        
+            <section><strong>Sensor options considered</strong>
             Several technologies were considered for monitoring brine and salt levels, including:
             <ul>
                 <li><strong>Float sensor</strong> — simple, reliable, and relatively low cost; suitable for detecting whether sufficient brine is available.</li>
@@ -151,13 +151,15 @@ up​
                 <li><strong>Guided Wave Radar</strong> — offers accurate level measurement but is more complex and costly.</li>
                 <li><strong>Electronic salt-level sensors</strong> — can provide more detailed information about remaining salt, such as an estimated percentage.</li>
             </ul>
+        </section>
 
-            For a condo or apartment building application, the float sensor was considered a practical option because the primary requirement was to determine whether there was enough salt/brine for reliable regeneration, rather than continuously measuring the exact liquid level.
-
-            <strong>Design consideration:</strong>
+        <section>  For a condo or apartment building application, the float sensor was considered a practical option because the primary requirement was to determine whether there was enough salt/brine for reliable regeneration, rather than continuously measuring the exact liquid level.
+</section>  
+           <section></section> <strong>Design consideration:</strong>
             The sensor therefore prioritizes reliability and cost-effectiveness while providing the building management team with an actionable low-level warning before softener failure occurs.
             </p>
             <img src="brinelevelsensor.PNG" alt="Brine Level Sensor" width="30%">
+            </section>
  </section>
 
 

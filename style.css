@@ -983,22 +983,22 @@ body.light-mode .hero-left-intro .highlight {
   letter-spacing: 3px;
   color: #d95dd7;
   text-shadow: 
-    -1px -1px 0 #000,  
-     1px -1px 0 #000,
-    -1px  1px 0 #000,  
-     1px  1px 0 #000; /* Creates a 1px black outline */
+    -0.8px -0.8px 0 #000,  
+     0.8px -0.8px 0 #000,
+    -0.8px  0.8px 0 #000,  
+     0.8px  0.8px 0 #000; /* Creates a 1px black outline */
 }
 
 .intro-keyword-nano {
   font-size:larger;
   font-family: 'VT323', monospace;
   letter-spacing: 3px;
-  color: turquoise;
+  color: rgb(104, 246, 243);
   text-shadow: 
-    -1px -1px 0 #000,  
-     1px -1px 0 #000,
-    -1px  1px 0 #000,  
-     1px  1px 0 #000; /* Creates a 1px black outline */
+    -0.8px -0.8px 0 #000,  
+     0.8px -0.8px 0 #000,
+    -0.8px  0.8px 0 #000,  
+     0.8px  0.8px 0 #000; /* Creates a 1px black outline */
 }
 
 .intro-keyword-ux {
@@ -1007,10 +1007,10 @@ body.light-mode .hero-left-intro .highlight {
   letter-spacing: 3px;
   color: #d94fae;
   text-shadow: 
-    -1px -1px 0 #000,  
-     1px -1px 0 #000,
-    -1px  1px 0 #000,  
-     1px  1px 0 #000; /* Creates a 1px black outline */
+    -0.8px -0.8px 0 #000,  
+     0.8px -0.8px 0 #000,
+    -0.8px  0.8px 0 #000,  
+     0.8px  0.8px 0 #000; /* Creates a 1px black outline */
 }
 
 /* ==========================================================================
