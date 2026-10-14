@@ -1,251 +1,1059 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartSoft | Water Hardness Monitoring</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- Page-specific styling -->
+    <style>
+        :root {
+            --case-accent: #00a3ad;
+            --case-accent-soft: #e8f8f8;
+            --case-pink: #f9e8ef;
+            --case-bg: #f8fafc;
+            --case-card: #ffffff;
+            --case-text: #222222;
+            --case-muted: #626b73;
+            --case-border: #e4e9ee;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body.light-mode {
+            background: var(--case-bg);
+            color: var(--case-text);
+            font-family: "Segoe UI", Arial, sans-serif;
+            line-height: 1.8;
+        }
+
+        /* Navigation */
+        .navbar {
+            padding: 20px 6%;
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid var(--case-border);
+            box-shadow: 0 4px 20px rgba(30, 50, 70, 0.04);
+        }
+
+        .navbar nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+        }
+
+        .navbar nav a {
+            text-decoration: none;
+        }
+
+        /* Main page width */
+        .case-study {
+            width: min(1100px, 88%);
+            margin: 0 auto;
+            padding-bottom: 100px;
+        }
+
+        /* Hero / introduction */
+        .project-hero {
+            padding: 90px 0 65px;
+            border-bottom: 1px solid var(--case-border);
+        }
+
+        .eyebrow {
+            margin: 0 0 18px;
+            color: var(--case-accent);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+        }
+
+        .project-hero h1 {
+            max-width: 950px;
+            margin: 0 0 24px;
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            line-height: 1.16;
+            letter-spacing: -0.04em;
+        }
+
+        .project-hero h1 a {
+            color: var(--case-accent);
+            text-decoration: none;
+        }
+
+        .project-hero h1 a:hover {
+            text-decoration: underline;
+            text-underline-offset: 6px;
+        }
+
+        .hero-description {
+            max-width: 780px;
+            margin: 0 0 30px;
+            color: var(--case-muted);
+            font-size: 1.08rem;
+            line-height: 1.9;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 30px 0 38px;
+        }
+
+        .project-tags span {
+            display: inline-block;
+            padding: 7px 13px;
+            background: var(--case-accent-soft);
+            border: 1px solid #cdeced;
+            border-radius: 30px;
+            color: #087d85;
+            font-size: 0.83rem;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .project-meta {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px 32px;
+            margin-top: 35px;
+        }
+
+        .meta-item {
+            padding-left: 16px;
+            border-left: 3px solid var(--case-pink);
+        }
+
+        .meta-item strong {
+            display: block;
+            margin-bottom: 3px;
+            font-size: 0.82rem;
+            color: var(--case-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .meta-item p {
+            margin: 0;
+            font-size: 0.94rem;
+        }
+
+        /* Section layout */
+        .case-section {
+            margin-top: 90px;
+            scroll-margin-top: 100px;
+        }
+
+        .section-number {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--case-accent);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .case-section h2 {
+            margin: 0 0 30px;
+            padding-left: 20px;
+            border-left: 4px solid var(--case-accent);
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            line-height: 1.3;
+            letter-spacing: -0.025em;
+        }
+
+        .case-section h3 {
+            margin: 42px 0 18px;
+            font-size: 1.4rem;
+            line-height: 1.4;
+        }
+
+        .case-section h4 {
+            margin: 0 0 18px;
+            font-size: 1.18rem;
+            line-height: 1.5;
+        }
+
+        .case-section p {
+            margin: 0 0 22px;
+            line-height: 1.9;
+        }
+
+        .case-section ul,
+        .case-section ol {
+            margin: 16px 0 26px;
+            padding-left: 25px;
+        }
+
+        .case-section li {
+            margin-bottom: 12px;
+            padding-left: 4px;
+        }
+
+        .case-section a {
+            color: #008c96;
+            font-weight: 600;
+            text-underline-offset: 4px;
+        }
+
+        .case-section a:hover {
+            color: #006c73;
+        }
+
+        /* Images */
+        .case-image {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-width: 850px;
+            margin: 28px auto;
+            border: 1px solid var(--case-border);
+            border-radius: 16px;
+            background: white;
+            box-shadow: 0 8px 28px rgba(30, 50, 70, 0.07);
+        }
+
+        .case-image.medium {
+            max-width: 680px;
+        }
+
+        .case-image.small {
+            max-width: 440px;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+            align-items: start;
+            margin-top: 28px;
+        }
+
+        .image-grid .case-image {
+            margin: 0;
+        }
+
+        .image-caption {
+            margin-top: 12px !important;
+            color: var(--case-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Highlighted information */
+        .insight-card {
+            margin: 28px 0;
+            padding: 25px 28px;
+            border: 1px solid #d7eeee;
+            border-radius: 14px;
+            background: var(--case-accent-soft);
+        }
+
+        .insight-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .insight-card strong {
+            color: #087d85;
+        }
+
+        .soft-card {
+            padding: 25px;
+            border: 1px solid var(--case-border);
+            border-radius: 14px;
+            background: var(--case-card);
+        }
+
+        .soft-card h4 {
+            color: var(--case-accent);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+            margin: 28px 0;
+        }
+
+        .sensor-card {
+            padding: 28px;
+            border: 1px solid var(--case-border);
+            border-radius: 16px;
+            background: var(--case-card);
+            box-shadow: 0 6px 22px rgba(30, 50, 70, 0.04);
+        }
+
+        .sensor-card h3 {
+            margin: 0 0 15px;
+            color: var(--case-accent);
+            font-size: 1.3rem;
+        }
+
+        .sensor-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .sensor-card ul {
+            margin-bottom: 0;
+        }
+
+        .sensor-label {
+            display: inline-block;
+            margin-bottom: 14px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            background: var(--case-pink);
+            color: #80445e;
+            font-size: 0.78rem;
+            font-weight: 700;
+        }
+
+        .system-flow {
+            margin: 24px 0;
+            padding: 20px;
+            border-radius: 12px;
+            background: #f0f5f8;
+            color: #253f4d;
+            text-align: center;
+            font-weight: 700;
+            overflow-wrap: anywhere;
+        }
+
+        /* User testing images */
+        .protocol-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 25px;
+        }
+
+        .protocol-grid figure {
+            margin: 0;
+            padding: 10px;
+            border: 1px solid var(--case-border);
+            border-radius: 12px;
+            background: white;
+        }
+
+        .protocol-grid img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+            margin-top: 25px;
+        }
+
+        .results-grid img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border: 1px solid var(--case-border);
+            border-radius: 14px;
+            background: white;
+            box-shadow: 0 6px 20px rgba(30, 50, 70, 0.05);
+        }
+
+        /* Closing section */
+        .project-outro {
+            margin-top: 90px;
+            padding: 35px;
+            border: 1px solid #f0dce5;
+            border-radius: 18px;
+            background: linear-gradient(135deg, #fff7fa, #f1fbfb);
+        }
+
+        .project-outro h2 {
+            margin-top: 0;
+        }
+
+        .project-outro .case-image {
+            margin-bottom: 0;
+        }
+
+        /* Mobile layout */
+        @media (max-width: 700px) {
+            .case-study {
+                width: 90%;
+            }
+
+            .project-hero {
+                padding: 55px 0 42px;
+            }
+
+            .project-meta,
+            .image-grid,
+            .card-grid,
+            .protocol-grid,
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .case-section {
+                margin-top: 62px;
+            }
+
+            .case-section h2 {
+                padding-left: 14px;
+            }
+
+            .sensor-card,
+            .soft-card,
+            .insight-card {
+                padding: 21px;
+            }
+
+            .project-outro {
+                padding: 24px;
+            }
+
+            .navbar {
+                padding: 16px 5%;
+            }
+        }
+    </style>
 </head>
 
-
 <body class="light-mode">
-        <header class="navbar">
 
-        <div class="logo">
-            TINA TANG
-        </div>
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="logo">TINA TANG</div>
 
         <nav>
-
             <a href="index.html#about">Home</a>
             <a href="index.html#contact">Contact</a>
-
         </nav>
-
     </header>
 
-    <div>   
-        <h1><a href="https://radiant-cupcake-6238d8.netlify.app/" target="_blank">SmartSoft Prototype:</a> Water Hardness Monitoring IoT Architecture System for Buildings</h1>
-        <span class="project-tag">
-                           <h3>Miro · Design Sprint · Problem & Solution · Stakeholder Communication  · Prototyping · Usability Testing</h3>  
-                        </span>
-                        <hr>
-        <p>From: SYDE 600 - Systems Theory, Models, Research & Design</p>
-        <p>Members: Christy Cui, Gengteng Xie, Kaiyuan Zhang, Shirui Yang, Tina Tang, Yingti Zhang</p> 
-        <p>Team Leader: Tina Tang</p>
-    </div>
+    <main class="case-study">
 
-    <section>
-        <h2>1. UNDERSTANDING THE PROBLEM</h2>
-        <p>
-            Water hardness is a common issue in building management, affecting both the efficiency of water systems and the longevity of appliances. Hard water contains high levels of calcium and magnesium ions, which can lead to scale buildup in pipes and fixtures, reducing water flow and increasing maintenance costs. Understanding and managing water hardness is crucial for ensuring optimal performance and sustainability in building operations.
-    </div>
-    <div>
-        <h2>2. STAKEHOLDERS & MAPPING THE PROCESS</h2>
-        <img src="all stakeholders.PNG" alt="all stakeholders" width="50%">
-        <p>Initially, the way our team wanted to view the problem was through the lens of primary stakeholders, which are the immediate water users. However, we figured it would be difficult to address the water hardness issue with this approach, as our solution ultimately may give rise to lower usability and accessibility for normal water users to employ in their day to day lives. Luckily, we thought through this point before our user testing phase.</p>
-    </section>
+        <!-- Hero / Project Introduction -->
+        <section class="project-hero">
+            <p class="eyebrow">Systems Design · Human Factors · IoT</p>
 
-    <section>
-        <h2>3. BRAINSTORMING: STORYBOARDING & SKETCHING</h2>
-        <div> <p>Each member in our team had their own 9-step storyboarding process, which is laid out in Miro and spread across three phases:
-        <ol>
-            <li><strong>Connect:</strong> Building Partnerships & Planning</li>
-            <li><strong>Treat:</strong> Optimize Chemical Water Softening</li>
-            <li><strong>Reduce:</strong> Brine & Waste Management</li>
-        </ol></p><img src="storyboarding water hardness.PNG" alt="water hardness storyboarding" width="50%"></div>
+            <h1>
+                <a href="https://radiant-cupcake-6238d8.netlify.app/"
+                   target="_blank"
+                   rel="noopener noreferrer">SmartSoft Prototype:</a>
+                Water Hardness Monitoring for Buildings
+            </h1>
 
-        
-        <div><P>At first, we wanted to stick to a more region-centralized approach involving the combination of three traditionally used methods to treat hard water, as circled in red:</P><img src="centralized solution brainstorming.PNG" alt="centralized solution brainstorming" width="50%"></div></div>
-        <div><P>We then turned to a more apartment-specific approach for a more simplistic and efficiently mapped-out user testing model in the later stages of our project (which will be further explained in detail in the next phase of our design sprint):</P><div><img src="apartmentapproach.PNG" alt="apartment approach" width="50%"></P></div>
-       
+            <p class="hero-description">
+                A systems-design project exploring how connected hardware sensors
+                and an interactive dashboard can help building management teams
+                monitor water-softening performance and identify potential
+                maintenance issues.
+            </p>
 
-        
-    </section>
-
-    <section>
-        <h2>4. DECISION: NARROWING DOWN SOLUTION APPROACH</h2>
-        <img src="narrow down to building.PNG" alt="narrow down to building" width="50%">
-        <p>Following our brainstorming and storyboarding phases, our team shifted away from a region-centric model to adopt a targeted, building-by-building approach. This strategy allowed us to tailor solutions to the specific infrastructure and needs of each facility, making the system much more feasible to design, implement, and manage within our strict course timeline.
-
-By focusing on individual sites, we empower building managers with intuitive tools to monitor water hardness effectively, thereby improving water quality and reducing long-term maintenance costs. To support prototyping and user testing within scope, we developed an interactive online dashboard tailored specifically for these managers, making it straightforward to evaluate user interaction and scale our solution.
-
-Online dashboard for property
-managers -> helps with scaling
-up​
-</section>
-
-<section>
-    <h2>5. FINAL SOLUTION</h2>
-        <p>The final solution involves the implementation of three real-time hardware sensors (brine level, conductivity, flow rate), connected through an IoT infrastrucutre to the SmartSoft prototype app. Building management or facility teams will have access to water quality measurements in real-time.</p>
-    <img src="iot-system-architecture.PNG" alt="IoT System Architecture" width="50%"></p>
-    <div>
-    <h3>APP PROTOTYPE: SMARTSOFT</h3>
-    <p>The SmartSoft app is designed to provide building management teams with real-time water quality data, including hardness levels, brine tank status, and flow rates. The app features a user-friendly interface that allows for easy monitoring and management of the water softening system. Alerts and notifications are sent to the management team in case of any anomalies or maintenance requirements.</p>
-
-    <img src="smartsoft prototype preview.PNG" alt="SmartSoft Prototype Preview" width="50%">
-    <a href="https://radiant-cupcake-6238d8.netlify.app/" target="_blank">View SmartSoft Prototype</a></p>
-        <ul>
-        <li>System: SmartSoft IoT Architecture​</li>
-
-
-        <li>Components: Integrated
-        Hardware Stack (Hardness,
-        Brine level, Flow Sensors) +
-        App Dashboard (the
-        prototype tested by
-        interviewees)​</li>
-        <li>Real-time monitoring of water hardness levels</li>
-        <li>Brine tank status alerts</li>
-        <li>Flow rate tracking and analysis</li>
-        <li>User-friendly dashboard for building management teams</li>
-    </ul>
-    </div>
-    <div>
-        <section>
-    <h3> EXPLANATION OF HARDWARE SENSORS</h3>
-    <div class="image-row">
-        <p>The hardware sensors used in the SmartSoft system include a brine level sensor, a conductivity sensor, and a flow rate sensor. These sensors are strategically placed within the water softening system to provide accurate and reliable data on water quality. The brine level sensor monitors the salt levels in the brine tank, the conductivity sensor measures the electrical conductivity of the water to determine hardness levels, and the flow rate sensor tracks the volume of water passing through the system.</p>
-    
-        <img src="hardware sensors.PNG" alt="Hardware Sensors" width="50%">
-        <img src="sensor technologies.PNG" alt="Sensor Technologies" width="50%">
-    </section></div>
-<section>
-        <h4>Flow Rate Sensor</h4>
-        <p>The flow rate sensor measures the rate of water entering the water softener, providing information about how much water is passing through the system over time. The flow rate sensor continuously monitors the volumetric flow of incoming hard, unsoftened water (ground or surface water) entering the treatment system. While standard environmental sensors provide baseline metrics, the flow rate sensor serves as the primary operational safeguard for system capacity and data validation.
-    
-    </div>
-    <div>
-            <strong>Two sensing approaches were considered:</strong>
-<ol>
-           <strong><li>Turbine / Impeller Sensor with Magnetic Pickup: </strong>
-        An inline turbine rotates as water flows through the pipe. A magnet embedded in the turbine is detected by a Hall-effect sensor, producing electrical pulses as the turbine rotates. By counting these pulses, the system can determine the water flow rate, typically reported in L/min or m³/h.
-</li>
-           <strong><li>Ultrasonic Time-of-Flight Sensor: </strong>
-            An ultrasonic sensor measures flow by detecting changes in the travel time of ultrasonic signals through the moving water. Unlike the turbine-based approach, the sensor can be mounted externally on the pipe using a clamp.
-</li>
-        </ol>
-
-            <strong>Placement considerations:</strong>
-            The turbine sensor is installed inline with the water supply, while the ultrasonic sensor can be externally clamped onto the pipe. This distinction was an important consideration when evaluating potential sensor configurations for the system.
-        </p>
-        </div>
-        <img src="flow rate sensor.PNG" alt="Flow Rate Sensor" width="30%">
-                </div>
-</section>
-
-<section>
-                    <h4>Brine Level Sensor</h4>
-            
-
-            <p>The brine level sensor monitors the salt and brine supply inside the softener’s brine tank to help ensure that regeneration can occur properly. If the brine level becomes too low, the system can alert building management before the softener begins producing hard water.
-
-            <div><strong>How it works:</strong> A float is positioned vertically inside the brine tank and moves up and down with the brine level. A magnetic reed switch detects the float's position and produces a simple digital signal (0/1). When the float drops below a defined level, the signal is sent to the IoT controller, which can trigger a low-level alert on the building management dashboard.
+            <div class="project-tags">
+                <span>Miro</span>
+                <span>Design Sprint</span>
+                <span>Problem &amp; Solution Framing</span>
+                <span>Stakeholder Communication</span>
+                <span>Prototyping</span>
+                <span>Usability Testing</span>
             </div>
-        
-            <section><strong>Sensor options considered</strong>
-            Several technologies were considered for monitoring brine and salt levels, including:
-            <ul>
-                <li><strong>Float sensor</strong> — simple, reliable, and relatively low cost; suitable for detecting whether sufficient brine is available.</li>
-                <li><strong>Ultrasonic level sensor</strong> — provides a more precise measurement of liquid level without physical contact.</li>
-                <li><strong>Guided Wave Radar</strong> — offers accurate level measurement but is more complex and costly.</li>
-                <li><strong>Electronic salt-level sensors</strong> — can provide more detailed information about remaining salt, such as an estimated percentage.</li>
-            </ul>
+
+            <div class="project-meta">
+                <div class="meta-item">
+                    <strong>Course</strong>
+                    <p>SYDE 600 — Systems Theory, Models, Research &amp; Design</p>
+                </div>
+
+                <div class="meta-item">
+                    <strong>Role</strong>
+                    <p>Team Leader</p>
+                </div>
+
+                <div class="meta-item">
+                    <strong>Team Members</strong>
+                    <p>Christy Cui, Gengteng Xie, Kaiyuan Zhang, Shirui Yang,
+                    Tina Tang, Yingti Zhang</p>
+                </div>
+
+                <div class="meta-item">
+                    <strong>Project Focus</strong>
+                    <p>Building-level water hardness monitoring and dashboard usability</p>
+                </div>
+            </div>
         </section>
 
-        <section>  For a condo or apartment building application, the float sensor was considered a practical option because the primary requirement was to determine whether there was enough salt/brine for reliable regeneration, rather than continuously measuring the exact liquid level.
-</section>  
-           <section></section> <strong>Design consideration:</strong>
-            The sensor therefore prioritizes reliability and cost-effectiveness while providing the building management team with an actionable low-level warning before softener failure occurs.
+
+        <!-- 1. Understanding the Problem -->
+        <section class="case-section">
+            <span class="section-number">01 / Problem Framing</span>
+            <h2>Understanding the Problem</h2>
+
+            <p>
+                Water hardness is a common issue in building management, affecting
+                both the efficiency of water systems and the longevity of appliances.
+                Hard water contains high levels of calcium and magnesium ions, which
+                can lead to scale buildup in pipes and fixtures, reducing water flow
+                and increasing maintenance costs. Understanding and managing water
+                hardness is crucial for ensuring optimal performance and sustainability
+                in building operations.
             </p>
-            <img src="brinelevelsensor.PNG" alt="Brine Level Sensor" width="30%">
-            </section>
- </section>
+        </section>
 
 
-<section><h4>Conductivity Sensor</h4>
+        <!-- 2. Stakeholders -->
+        <section class="case-section">
+            <span class="section-number">02 / Stakeholder Research</span>
+            <h2>Stakeholders &amp; Mapping the Process</h2>
 
-                <p>The conductivity sensor monitors water quality at the outlet of the water softener, providing an indication of when the softening process may no longer be effectively removing hardness from the water.
+            <p>
+                Initially, our team approached the problem through the lens of primary
+                stakeholders: the immediate water users. However, we recognized that
+                this approach could make the solution less usable or accessible for
+                everyday users. We reconsidered our stakeholder focus before the
+                user-testing phase.
+            </p>
 
-                <p><strong>How it works:</strong>
-                A conductivity probe is positioned in a small sampling chamber connected to the softener's outlet pipe. The probe uses two electrodes and applies a small AC current between them to measure how readily electricity passes through the water.
+            <img class="case-image medium"
+                 src="all stakeholders.PNG"
+                 alt="Stakeholder map showing people and groups involved in water hardness management">
+        </section>
 
-                Water hardness is primarily associated with dissolved calcium (Ca²⁺) and magnesium (Mg²⁺) ions. As the concentration of dissolved ions increases, electrical conductivity generally increases as well. Therefore, a rise in conductivity can be used as an indicator of increasing hardness and potential hard-water breakthrough.
 
-                <div><strong>What a rising reading indicates</strong>
+        <!-- 3. Brainstorming -->
+        <section class="case-section">
+            <span class="section-number">03 / Divergent Exploration</span>
+            <h2>Brainstorming: Storyboarding &amp; Sketching</h2>
 
-                <ul>
-                    <li>Resin exhaustion: the softener's ion-exchange resin may be reaching its capacity.</li>
-                    <li>Increasing hardness: more hardness ions may be passing through the softener.</li>
-                    <li>Hard-water breakthrough: untreated or insufficiently softened water may be entering the building's water system.</li>
-                </ul>
-</div>
-                <strong>Role in the monitoring system:</strong>
-                The conductivity sensor provides an early warning of declining softener performance. Combined with the flow rate and brine-level sensors, it allows the monitoring system to detect potential problems and provide building management with actionable information before water quality is significantly affected.
+            <p>
+                Each team member developed a nine-step storyboard in Miro. The
+                storyboards were organized around three phases:
+            </p>
+
+            <div class="card-grid">
+                <div class="soft-card">
+                    <h4>01. Connect</h4>
+                    <p>Building partnerships and planning.</p>
+                </div>
+
+                <div class="soft-card">
+                    <h4>02. Treat</h4>
+                    <p>Optimizing chemical water softening.</p>
+                </div>
+
+                <div class="soft-card">
+                    <h4>03. Reduce</h4>
+                    <p>Managing brine and waste.</p>
+                </div>
+            </div>
+
+            <img class="case-image"
+                 src="storyboarding water hardness.PNG"
+                 alt="Team storyboarding process for the water hardness project">
+
+            <h3>Exploring a Centralized Approach</h3>
+
+            <p>
+                Initially, we considered a region-centralized approach that combined
+                three traditionally used methods to treat hard water, as circled in red.
+            </p>
+
+            <img class="case-image medium"
+                 src="centralized solution brainstorming.PNG"
+                 alt="Brainstorming diagram showing the proposed centralized water treatment approach">
+
+            <h3>Shifting to an Apartment-Specific Approach</h3>
+
+            <p>
+                We then shifted toward an apartment-specific approach. This offered
+                a more simplified and efficiently mapped-out model for user testing
+                in the later stages of our design sprint.
+            </p>
+
+            <img class="case-image medium"
+                 src="apartmentapproach.PNG"
+                 alt="Brainstorming diagram showing an apartment-specific water monitoring approach">
+        </section>
+
+
+        <!-- 4. Decision -->
+        <section class="case-section">
+            <span class="section-number">04 / Design Decision</span>
+            <h2>Narrowing Down the Solution Approach</h2>
+
+            <img class="case-image medium"
+                 src="narrow down to building.PNG"
+                 alt="Diagram illustrating the decision to focus on individual buildings">
+
+            <p>
+                Following our brainstorming and storyboarding phases, our team shifted
+                away from a region-centric model to adopt a targeted, building-by-building
+                approach. This strategy allowed us to tailor solutions to the specific
+                infrastructure and needs of each facility, making the system more feasible
+                to design, implement, and manage within our course timeline.
+            </p>
+
+            <p>
+                By focusing on individual sites, we aimed to empower building managers
+                with intuitive tools to monitor water hardness, improve water-system
+                management, and reduce long-term maintenance costs. To support prototyping
+                and user testing within scope, we developed an interactive online dashboard
+                tailored specifically for building managers.
+            </p>
+
+            <div class="insight-card">
+                <p>
+                    <strong>Key design decision:</strong> Focus the monitoring system
+                    on individual buildings and provide building managers with a digital
+                    dashboard for monitoring and scaling the solution.
                 </p>
-                <img src="conductivity sensor.PNG" alt="Conductivity Sensor" width="600" height="400">
-            </section>
+            </div>
+        </section>
 
-<section>
-            <h4><strong>IoT Controller</strong> (IoT Controller = Microcontroller + Communication + Sensor Interface)</h4>
-                <p>The IoT controller acts as the central integration point between the water softener's physical sensors and the remote monitoring dashboard. It combines a microcontroller, sensor interfaces, and communication capabilities to collect, process, and transmit information from the softener.
 
-            <strong>How it works</strong>
-            The microcontroller receives signals from each sensor and converts them into usable data:
+        <!-- 5. Final Solution -->
+        <section class="case-section">
+            <span class="section-number">05 / Proposed Solution</span>
+            <h2>Final Solution</h2>
+
+            <p>
+                The final solution combines three real-time hardware sensors
+                (brine level, conductivity, and flow rate) with an Internet of Things
+                (IoT) infrastructure and the SmartSoft prototype app. Building management
+                and facility teams can use the dashboard to view water-system measurements
+                and identify potential maintenance needs.
+            </p>
+
+            <img class="case-image"
+                 src="iot-system-architecture.PNG"
+                 alt="IoT system architecture connecting hardware sensors, controller, and monitoring dashboard">
+
+            <h3>App Prototype: SmartSoft</h3>
+
+            <p>
+                The SmartSoft app is designed to provide building management teams with
+                water-system data, including hardness indicators, brine tank status,
+                and flow rates. The dashboard is intended to support monitoring and
+                management, with alerts for potential anomalies or maintenance needs.
+            </p>
+
+            <img class="case-image medium"
+                 src="smartsoft prototype preview.PNG"
+                 alt="Preview of the SmartSoft building management dashboard">
+
+            <p>
+                <a href="https://radiant-cupcake-6238d8.netlify.app/"
+                   target="_blank"
+                   rel="noopener noreferrer">View the SmartSoft Prototype ↗</a>
+            </p>
+
+            <div class="card-grid">
+                <div class="soft-card">
+                    <h4>Hardware Stack</h4>
+                    <p>
+                        Brine-level, conductivity, and flow-rate sensors provide
+                        information about the water-softening system.
+                    </p>
+                </div>
+
+                <div class="soft-card">
+                    <h4>Dashboard</h4>
+                    <p>
+                        A digital interface intended for building managers and
+                        facility maintenance teams.
+                    </p>
+                </div>
+
+                <div class="soft-card">
+                    <h4>Monitoring</h4>
+                    <p>
+                        Water-hardness indicators and flow-rate tracking help users
+                        observe system performance.
+                    </p>
+                </div>
+
+                <div class="soft-card">
+                    <h4>Alerts</h4>
+                    <p>
+                        Brine-level and other system alerts can help flag potential
+                        maintenance needs.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Hardware Sensors Overview -->
+        <section class="case-section">
+            <span class="section-number">05.1 / Hardware Architecture</span>
+            <h2>Understanding the Hardware Sensors</h2>
+
+            <p>
+                The SmartSoft system incorporates a brine-level sensor, a conductivity
+                sensor, and a flow-rate sensor. These sensors are positioned within the
+                water-softening system to provide information about water quality and
+                system operation. The brine-level sensor monitors the salt/brine supply,
+                the conductivity sensor measures electrical conductivity as an indicator
+                of water quality, and the flow-rate sensor tracks the volume of water
+                passing through the system.
+            </p>
+
+            <div class="image-grid">
+                <img class="case-image"
+                     src="hardware sensors.PNG"
+                     alt="Overview of hardware sensors in the SmartSoft system">
+
+                <img class="case-image"
+                     src="sensor technologies.PNG"
+                     alt="Sensor technologies considered for the monitoring system">
+            </div>
+        </section>
+
+
+        <!-- Flow Rate Sensor -->
+        <section class="case-section">
+            <span class="section-number">Sensor 01</span>
+            <h2>Flow Rate Sensor</h2>
+
+            <p>
+                The flow-rate sensor measures the rate of water entering the water
+                softener, providing information about how much water passes through
+                the system over time. It monitors the volumetric flow of incoming
+                hard, unsoftened water from a ground or surface water source. In the
+                proposed system, flow data can help monitor operational capacity and
+                validate other measurements.
+            </p>
+
+            <h3>Two Sensing Approaches Considered</h3>
+
+            <div class="card-grid">
+                <article class="sensor-card">
+                    <span class="sensor-label">Option A</span>
+                    <h3>Turbine / Impeller Sensor</h3>
+
+                    <p>
+                        An inline turbine rotates as water flows through the pipe.
+                        A magnet embedded in the turbine is detected by a Hall-effect
+                        sensor, producing electrical pulses as the turbine rotates.
+                        By counting these pulses, the system can estimate the water
+                        flow rate, typically reported in L/min or m³/h.
+                    </p>
+                </article>
+
+                <article class="sensor-card">
+                    <span class="sensor-label">Option B</span>
+                    <h3>Ultrasonic Time-of-Flight Sensor</h3>
+
+                    <p>
+                        An ultrasonic sensor estimates flow by detecting changes in
+                        the travel time of ultrasonic signals through moving water.
+                        Unlike a turbine-based sensor, it can be mounted externally
+                        on the pipe using a clamp.
+                    </p>
+                </article>
+            </div>
+
+            <div class="insight-card">
+                <p>
+                    <strong>Placement consideration:</strong> The turbine sensor is
+                    installed inline with the water supply, whereas the ultrasonic
+                    sensor can be externally clamped onto the pipe. This difference
+                    was an important consideration when evaluating potential sensor
+                    configurations.
+                </p>
+            </div>
+
+            <img class="case-image small"
+                 src="flow rate sensor.PNG"
+                 alt="Flow-rate sensor concept">
+        </section>
+
+
+        <!-- Brine Level Sensor -->
+        <section class="case-section">
+            <span class="section-number">Sensor 02</span>
+            <h2>Brine-Level Sensor</h2>
+
+            <p>
+                The brine-level sensor monitors the salt and brine supply inside the
+                softener’s brine tank to help ensure that regeneration can occur properly.
+                If the brine level becomes too low, the system can alert building
+                management before the softener begins producing hard water.
+            </p>
+
+            <div class="soft-card">
+                <h4>How It Works</h4>
+
+                <p>
+                    A float is positioned vertically inside the brine tank and moves
+                    up and down with the brine level. A magnetic reed switch detects
+                    the float's position and produces a simple digital signal (0/1).
+                    When the float drops below a defined level, the signal is sent to
+                    the IoT controller, which can trigger a low-level alert on the
+                    building management dashboard.
+                </p>
+            </div>
+
+            <h3>Sensor Options Considered</h3>
 
             <ul>
-                <li>Digital signal (0/1) → brine level sensor</li>
-                <li>Analog signal → conductivity sensor</li>
-                <li>Pulse/frequency signal → flow rate sensor</li>
+                <li>
+                    <strong>Float sensor:</strong> Simple, reliable, and relatively
+                    low cost; suitable for detecting whether sufficient brine is available.
+                </li>
+                <li>
+                    <strong>Ultrasonic level sensor:</strong> Provides a more precise
+                    measurement of liquid level without physical contact.
+                </li>
+                <li>
+                    <strong>Guided Wave Radar:</strong> Offers accurate level
+                    measurement but is more complex and costly.
+                </li>
+                <li>
+                    <strong>Electronic salt-level sensors:</strong> Can provide more
+                    detailed information about remaining salt, such as an estimated
+                    percentage.
+                </li>
             </ul>
 
-            The controller can then apply basic logic to identify conditions such as low brine levels, increasing conductivity, or abnormal flow rates.
+            <h3>Design Consideration</h3>
 
-            <div><strong>Connecting the system:</strong>
-            Beyond local processing, the IoT controller provides the communication layer needed to transmit sensor data to the cloud and ultimately the building management dashboard. Depending on the system architecture, this communication could use technologies such as Wi-Fi, LoRa, Zigbee, or Ethernet.
-
-            This makes the IoT controller the bridge between the physical water-softening system and the digital monitoring interface, enabling remote monitoring, data visualization, and automated alerts.
-</div>
-
-<div>
-            <strong>System Architecture:</strong>
-
-            Sensors → IoT Controller → Cloud → Monitoring Dashboard
-
-            The controller therefore transforms individual sensor measurements into actionable information that building management can use to monitor softener performance and respond to potential issues.
+            <p>
+                For a condo or apartment building application, the float sensor was
+                considered a practical option because the primary requirement was to
+                determine whether there was enough salt/brine for reliable regeneration,
+                rather than continuously measuring the exact liquid level. The design
+                therefore prioritizes reliability and cost-effectiveness while providing
+                an actionable low-level warning before softener failure occurs.
             </p>
+
+            <img class="case-image small"
+                 src="brinelevelsensor.PNG"
+                 alt="Brine-level sensor concept">
+        </section>
+
+
+        <!-- Conductivity Sensor -->
+        <section class="case-section">
+            <span class="section-number">Sensor 03</span>
+            <h2>Conductivity Sensor</h2>
+
+            <p>
+                The conductivity sensor monitors water quality at the outlet of the
+                water softener, providing an indication of when the softening process
+                may no longer be effectively removing hardness from the water.
+            </p>
+
+            <div class="soft-card">
+                <h4>How It Works</h4>
+
+                <p>
+                    A conductivity probe is positioned in a small sampling chamber
+                    connected to the softener's outlet pipe. The probe uses two
+                    electrodes and applies a small AC current between them to measure
+                    how readily electricity passes through the water.
+                </p>
+
+                <p>
+                    Water hardness is primarily associated with dissolved calcium
+                    (Ca²⁺) and magnesium (Mg²⁺) ions. As the concentration of dissolved
+                    ions increases, electrical conductivity generally increases as well.
+                    Therefore, a rise in conductivity can be used as an indicator of
+                    changing water quality and potential hard-water breakthrough.
+                </p>
             </div>
- </section>
+
+            <h3>What a Rising Reading May Indicate</h3>
+
+            <ul>
+                <li>
+                    <strong>Resin exhaustion:</strong> The softener's ion-exchange
+                    resin may be reaching its capacity.
+                </li>
+                <li>
+                    <strong>Increasing hardness:</strong> More hardness ions may be
+                    passing through the softener.
+                </li>
+                <li>
+                    <strong>Hard-water breakthrough:</strong> Untreated or insufficiently
+                    softened water may be entering the building's water system.
+                </li>
+            </ul>
+
+            <div class="insight-card">
+                <p>
+                    <strong>Role in the monitoring system:</strong> The conductivity
+                    sensor can provide an early warning of declining softener performance.
+                    Combined with flow-rate and brine-level measurements, it can help
+                    identify potential problems and provide building management with
+                    actionable information.
+                </p>
+            </div>
+
+            <img class="case-image medium"
+                 src="conductivity sensor.PNG"
+                 alt="Conductivity sensor concept">
+        </section>
 
 
-<h2>6. USER TESTING</h2>
-User outreach strategy was done via email, in-person office visits or phone calls to speed up the process. The link to the <a href="https://radiant-cupcake-6238d8.netlify.app/" target="_blank">prototype</a> was provided, along with an attached Google Form for feedback as data for user testing. The user testing was conducted with building managers and facility maintenance personnel from 5 different building management organizations as participants(WCRI​, Wilson, Blanchard Management Inc​, KWP Management Corp.​, Modern property Management Int.​, Krall Property Management Inc. OLCMP​). Each participant was asked to complete a series of tasks using the SmartSoft app prototype, while their feedback were recorded for analysis.
-<div class="image-row">
-    <h4>USER TESTING PROTOCOL</h4>
-    <section>
-<img src="1.PNG" alt="user testing 1" width="500">
-<img src="2.PNG" alt="user testing 2" width="500">
-<img src="3.PNG" alt="user testing 3" width="500">
-<img src="4.PNG" alt="user testing 4" width="500">
-<img src="5.PNG" alt="user testing 5" width="500">
-<img src="6.PNG" alt="user testing 6" width="500">
-<img src="7.PNG" alt="user testing 7" width="500">
-<img src="8.PNG" alt="user testing 8" width="500">
-<img src="9.PNG" alt="user testing 9" width="500">
-<img src="10.PNG" alt="user testing 10" width="500">
-</section>
-</div>
+        <!-- IoT Controller -->
+        <section class="case-section">
+            <span class="section-number">System Integration</span>
+            <h2>IoT Controller</h2>
 
-<div class="image-row">
-    <h4>USER TESTING RESULTS</h4>
-    <section></section>
-<div><img src="analyzing findings 1.PNG" alt="analyzing findings 1" width="800"></div>
-<div><img src="analyzing findings 2.PNG" alt="analyzing findings 2" width="800"></div>
-</section>
-</div>
+            <p>
+                The IoT controller acts as the central integration point between the
+                water softener's physical sensors and the remote monitoring dashboard.
+                It combines a microcontroller, sensor interfaces, and communication
+                capabilities to collect, process, and transmit information from the
+                softener.
+            </p>
+
+            <h3>How It Works</h3>
+
+            <p>
+                The microcontroller receives signals from each sensor and converts
+                them into usable data:
+            </p>
+
+            <div class="card-grid">
+                <div class="soft-card">
+                    <h4>Digital Signal (0/1)</h4>
+                    <p>Brine-level sensor.</p>
+                </div>
+
+                <div class="soft-card">
+                    <h4>Analog Signal</h4>
+                    <p>Conductivity sensor.</p>
+                </div>
+
+                <div class="soft-card">
+                    <h4>Pulse / Frequency Signal</h4>
+                    <p>Flow-rate sensor.</p>
+                </div>
+            </div>
+
+            <p>
+                The controller can then apply basic logic to identify conditions such
+                as low brine levels, increasing conductivity, or abnormal flow rates.
+            </p>
+
+            <h3>Connecting the System</h3>
+
+            <p>
+                Beyond local processing, the IoT controller provides the communication
+                layer needed to transmit sensor data to the cloud and ultimately the
+                building management dashboard. Depending on the system architecture,
+                this communication could use technologies such as Wi-Fi, LoRa, Zigbee,
+                or Ethernet.
+            </p>
+
+            <p>
+                This makes the IoT controller the bridge between the physical
+                water-softening system and the digital monitoring interface, enabling
+                remote monitoring, data visualization, and automated alerts.
+            </p>
+
+            <div class="system-flow">
+                Sensors &rarr; IoT Controller &rarr; Cloud &rarr; Monitoring Dashboard
+            </div>
+
+            <p>
+                The controller therefore transforms individual sensor measurements
+                into actionable information that building management can use to
+                monitor softener performance and respond to potential issues.
+            </p>
+        </section>
 
 
-<h2>7. KEY ACCOMPLISHMENTS</h2>
-<p>The main key accomplishments in our design sprint for this class:</p>
-<div><img src="key accomplishments.PNG" alt="key accomplishments" width="600"></div>
+        <!-- 6. User Testing -->
+        <section class="case-section">
+            <span class="section-number">06 / Evaluation</span>
+            <h2>User Testing</h2>
+
+            <p>
+                User outreach was conducted through email, in-person office visits,
+                and phone calls. The SmartSoft prototype link was provided alongside
+                a Google Form for feedback. Participants were building managers and
+                facility maintenance personnel from five different building management
+                organizations. Each participant was asked to complete a series of tasks
+                using the SmartSoft app prototype, and their feedback was recorded for
+                analysis.
+            </p>
+
+            <div class="insight-card">
+                <p>
+                    <strong>Evaluation focus:</strong> Participants interacted with
+                    the dashboard prototype and provided feedback to support assessment
+                    of the proposed interface.
+                </p>
+
+                <p>
+                    <a href="https://radiant-cupcake-6238d8.netlify.app/"
+                       target="_blank"
+                       rel="noopener noreferrer">Open the SmartSoft Prototype ↗</a>
+                </p>
+            </div>
+
+            <h3>User Testing Protocol</h3>
+
+            <p>
+                The following images document the user-testing protocol and the tasks
+                provided to participants.
+            </p>
+
+            <div class="protocol-grid">
+                <figure><img src="1.PNG" alt="User testing protocol, step 1"></figure>
+                <figure><img src="2.PNG" alt="User testing protocol, step 2"></figure>
+                <figure><img src="3.PNG" alt="User testing protocol, step 3"></figure>
+                <figure><img src="4.PNG" alt="User testing protocol, step 4"></figure>
+                <figure><img src="5.PNG" alt="User testing protocol, step 5"></figure>
+                <figure><img src="6.PNG" alt="User testing protocol, step 6"></figure>
+                <figure><img src="7.PNG" alt="User testing protocol, step 7"></figure>
+                <figure><img src="8.PNG" alt="User testing protocol, step 8"></figure>
+                <figure><img src="9.PNG" alt="User testing protocol, step 9"></figure>
+                <figure><img src="10.PNG" alt="User testing protocol, step 10"></figure>
+            </div>
+
+            <h3>User Testing Results</h3>
+
+            <p>
+                The following visuals summarize the analysis of findings from the
+                user-testing activities.
+            </p>
+
+            <div class="results-grid">
+                <img src="analyzing findings 1.PNG"
+                     alt="User testing findings analysis, part one">
+
+                <img src="analyzing findings 2.PNG"
+                     alt="User testing findings analysis, part two">
+            </div>
+        </section>
+
+
+        <!-- 7. Key Accomplishments -->
+        <section class="project-outro">
+            <span class="section-number">07 / Project Outcomes</span>
+            <h2>Key Accomplishments</h2>
+
+            <p>
+                The main accomplishments from our design sprint are summarized below.
+            </p>
+
+            <img class="case-image"
+                 src="key accomplishments.PNG"
+                 alt="Summary of key accomplishments from the SmartSoft design sprint">
+        </section>
+
+    </main>
+
 </body>
+</html>
