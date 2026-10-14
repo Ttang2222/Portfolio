@@ -5,6 +5,426 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Page-specific styling -->
+    <style>
+        :root {
+            --case-accent: #00a3ad;
+            --case-accent-soft: #e8f8f8;
+            --case-pink: #f9e8ef;
+            --case-bg: #f8fafc;
+            --case-card: #ffffff;
+            --case-text: #222222;
+            --case-muted: #626b73;
+            --case-border: #e4e9ee;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body.light-mode {
+            background: var(--case-bg);
+            color: var(--case-text);
+            font-family: "Segoe UI", Arial, sans-serif;
+            line-height: 1.8;
+        }
+
+        /* Navigation */
+        .navbar {
+            padding: 20px 6%;
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid var(--case-border);
+            box-shadow: 0 4px 20px rgba(30, 50, 70, 0.04);
+        }
+
+        .navbar nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+        }
+
+        .navbar nav a {
+            text-decoration: none;
+        }
+
+        /* Main page width */
+        .case-study {
+            width: min(1100px, 88%);
+            margin: 0 auto;
+            padding-bottom: 100px;
+        }
+
+        /* Hero / introduction */
+        .project-hero {
+            padding: 90px 0 65px;
+            border-bottom: 1px solid var(--case-border);
+        }
+
+        .eyebrow {
+            margin: 0 0 16px;
+            color: var(--case-accent);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+        }
+
+
+        .project-hero h1 {
+            max-width: 950px;
+            margin: 0 0 24px;
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            line-height: 1.16;
+            letter-spacing: -0.04em;
+        }
+
+        .project-hero h1 a {
+            color: var(--case-accent);
+            text-decoration: none;
+        }
+
+        .project-hero h1 a:hover {
+            text-decoration: underline;
+            text-underline-offset: 6px;
+        }
+
+        .hero-description {
+max-width:750px;
+            display: flex;
+align-items:center;
+            margin: 0 0 30px;
+            color: var(--case-muted);
+            font-size: 1.08rem;
+            line-height: 1.9;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 30px 0 38px;
+        }
+
+        .project-tags span {
+            display: inline-block;
+            padding: 7px 13px;
+            background: var(--case-accent-soft);
+            border: 1px solid #cdeced;
+            border-radius: 30px;
+            color: #087d85;
+            font-size: 0.83rem;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .project-meta {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px 32px;
+            margin-top: 35px;
+        }
+
+        .meta-item {
+            padding-left: 16px;
+            border-left: 3px solid var(--case-pink);
+        }
+
+        .meta-item strong {
+            display: block;
+            margin-bottom: 3px;
+            font-size: 0.82rem;
+            color: var(--case-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .meta-item p {
+            margin: 0;
+            font-size: 0.94rem;
+        }
+
+        /* Section layout */
+        .case-section {
+            margin-top: 90px;
+            scroll-margin-top: 100px;
+        }
+
+        .section-number {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--case-accent);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .case-section h2 {
+            margin: 0 0 30px;
+            padding-left: 20px;
+            border-left: 4px solid var(--case-accent);
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            line-height: 1.3;
+            letter-spacing: -0.025em;
+        }
+
+        .case-section h3 {
+            margin: 42px 0 18px;
+            font-size: 1.4rem;
+            line-height: 1.4;
+        }
+
+        .case-section h4 {
+            margin: 0 0 18px;
+            font-size: 1.18rem;
+            line-height: 1.5;
+        }
+
+        .case-section p {
+            margin: 0 0 22px;
+            line-height: 1.9;
+        }
+
+        .case-section ul,
+        .case-section ol {
+            margin: 16px 0 26px;
+            padding-left: 25px;
+        }
+
+        .case-section li {
+            margin-bottom: 12px;
+            padding-left: 4px;
+        }
+
+        .case-section a {
+            color: #008c96;
+            font-weight: 600;
+            text-underline-offset: 4px;
+        }
+
+        .case-section a:hover {
+            color: #006c73;
+        }
+
+        /* Images */
+        .case-image {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-width: 850px;
+            margin: 28px auto;
+            border: 1px solid var(--case-border);
+            border-radius: 16px;
+            background: white;
+            box-shadow: 0 8px 28px rgba(30, 50, 70, 0.07);
+        }
+
+        .case-image.medium {
+            max-width: 680px;
+        }
+
+        .case-image.small {
+            max-width: 440px;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+            align-items: start;
+            margin-top: 28px;
+        }
+
+        .image-grid .case-image {
+            margin: 0;
+        }
+
+        .image-caption {
+            margin-top: 12px !important;
+            color: var(--case-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Highlighted information */
+        .insight-card {
+            margin: 28px 0;
+            padding: 25px 28px;
+            border: 1px solid #d7eeee;
+            border-radius: 14px;
+            background: var(--case-accent-soft);
+        }
+
+        .insight-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .insight-card strong {
+            color: #087d85;
+        }
+
+        .soft-card {
+            padding: 25px;
+            border: 1px solid var(--case-border);
+            border-radius: 14px;
+            background: var(--case-card);
+        }
+
+        .soft-card h4 {
+            color: var(--case-accent);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+            margin: 28px 0;
+        }
+
+        .sensor-card {
+            padding: 28px;
+            border: 1px solid var(--case-border);
+            border-radius: 16px;
+            background: var(--case-card);
+            box-shadow: 0 6px 22px rgba(30, 50, 70, 0.04);
+        }
+
+        .sensor-card h3 {
+            margin: 0 0 15px;
+            color: var(--case-accent);
+            font-size: 1.3rem;
+        }
+
+        .sensor-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .sensor-card ul {
+            margin-bottom: 0;
+        }
+
+        .sensor-label {
+            display: inline-block;
+            margin-bottom: 14px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            background: var(--case-pink);
+            color: #80445e;
+            font-size: 0.78rem;
+            font-weight: 700;
+        }
+
+        .system-flow {
+            margin: 24px 0;
+            padding: 20px;
+            border-radius: 12px;
+            background: #f0f5f8;
+            color: #253f4d;
+            text-align: center;
+            font-weight: 700;
+            overflow-wrap: anywhere;
+        }
+
+        /* User testing images */
+        .protocol-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 25px;
+        }
+
+        .protocol-grid figure {
+            margin: 0;
+            padding: 10px;
+            border: 1px solid var(--case-border);
+            border-radius: 12px;
+            background: white;
+        }
+
+        .protocol-grid img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+            margin-top: 25px;
+        }
+
+        .results-grid img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border: 1px solid var(--case-border);
+            border-radius: 14px;
+            background: white;
+            box-shadow: 0 6px 20px rgba(30, 50, 70, 0.05);
+        }
+
+        /* Closing section */
+        .project-outro {
+            margin-top: 90px;
+            padding: 35px;
+            border: 1px solid #f0dce5;
+            border-radius: 18px;
+            background: linear-gradient(135deg, #fff7fa, #f1fbfb);
+        }
+
+        .project-outro h2 {
+            margin-top: 0;
+        }
+
+        .project-outro .case-image {
+            margin-bottom: 0;
+        }
+
+        /* Mobile layout */
+        @media (max-width: 700px) {
+            .case-study {
+                width: 90%;
+            }
+
+            .project-hero {
+                padding: 55px 0 42px;
+            }
+
+            .project-meta,
+            .image-grid,
+            .card-grid,
+            .protocol-grid,
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .case-section {
+                margin-top: 62px;
+            }
+
+            .case-section h2 {
+                padding-left: 14px;
+            }
+
+            .sensor-card,
+            .soft-card,
+            .insight-card {
+                padding: 21px;
+            }
+
+            .project-outro {
+                padding: 24px;
+            }
+
+            .navbar {
+                padding: 16px 5%;
+            }
+        }
+    </style>
+
 </head>
 
 
@@ -24,21 +444,41 @@
 
     </header>
 
-    <div>   
-        <h1>Screw Holder</h1>
-        <span class="project-tag">
+    <main class="case-study">   
+        <section class="project-hero">
+        <h1>ScrewHolder Prototype</h1>
+        <div class="eyebrow">
                            <h3>Statistical Hypothesis Testing · Affinity Diagrams · Miro · NASA-TLX · Stakeholders  · Prototyping · Usability Testing</h3>  
-                        </span>
-                        <hr>
-        <p>From: SYDE 644 - Human Factors Testing</p>
-        <p>Members: Amit Bains, Kshin Patel, Sneha Shah, Tina Tang</p>
-        <p></p>After noting down real-time observations and creating affinity diagrams to identify gaps in the existing solution of mounting brackets onto a wall with a regular drill, my group and I listed the associated design requirements and created a screwholder prototype to accompany the drill in the same bracket-mounting task. For the report, I was in charge of the statistical analysis to test the hypotheses between conditions A(without screwholder) and B(with screwholder) on behalf of the team.
-        Our full report is as follows:
-        </p>
-    </div>
+        </div>
+
+         <div class="project-meta">
+                <div class="meta-item">
+                    <strong>Course</strong>
+                    <p>SYDE 644 - Human Factors Testing</p>
+                </div>
+
+
+                <div class="meta-item">
+                    <strong>Team Members</strong>
+                    <p>Amit Bains, Kshin Patel, Sneha Shah, Tina Tang</p>
+                </div>
+
+        
+            </div>
+
+        
+        <section class="project-hero">
+            <p class="hero-description">
+                After noting down real-time observations and creating affinity diagrams to identify gaps in the existing solution of mounting brackets onto a wall with a regular drill, my group and I listed the associated design requirements and created a screwholder prototype to accompany the drill in the same bracket-mounting task. For the report, I was in charge of the statistical analysis to test the hypotheses between conditions A(without screwholder) and B(with screwholder) on behalf of the team.
+                Our full report is as follows:
+            </p>
+        </section>
+        
+    
 
 <embed src="SYDE44_Team9_Final_Report.pdf" type="application/pdf" width="100%" height="600px" />
-
+</section>
+</main>
 
     </body>
     </html>
