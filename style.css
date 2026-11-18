@@ -496,7 +496,7 @@ footer {
 }
 
 .project-card:hover .card-arrow-indicator {
-  /*color: #00ffff; /* Alternates indicator values upon wrapper focus */
+  color: #00ffff; /* Alternates indicator values upon wrapper focus */
 }
 
 
@@ -838,7 +838,9 @@ footer {
   /* 3. Pull the arrow slightly up up from the absolute bottom to land in the text sweet spot.
         Adjust this value (e.g., -15px to -30px) depending on your font size! */
   margin-bottom: 22px !important; 
-}@media
+} @media (max-width: 700px) {
+  /* styles */
+}
 
 
 
@@ -1334,12 +1336,11 @@ body.light-mode .keyword-tag {
 .project-card:hover .keyword-tag {
   border-color: #00ffff;
   box-shadow: 0 0 6px rgba(0, 255, 255, 0.3);
- 
+}
 
-body.light-mode .project-card:hover .keyword-tag {
-  border-color: #00a3ad;
-  box-shadow: 0 0 6px rgba(0, 163, 173, 0.25);
-  
+.project-card:hover .keyword-tag {
+  border-color: #00ffff;
+  box-shadow: 0 0 6px rgba(0, 255, 255, 0.3);
 }
 
 
@@ -1601,4 +1602,155 @@ body.light-mode section + section {
         margin-top: 20px;
         margin-bottom: 24px;
     }
+}
+
+
+/* ==============================================================
+   PORTFOLIO CASE STUDIES — SCOPED DESIGN SYSTEM (2026)
+   Append-only: all pre-existing homepage / component rules above
+   are retained. Only pages with class="portfolio-case" use this.
+   ============================================================== */
+body.light-mode.portfolio-case {
+  --case-accent: #00a3ad;
+  --case-accent-dark: #087d85;
+  --case-accent-soft: #e8f8f8;
+  --case-pink: #f9e8ef;
+  --case-bg: #f8fafc;
+  --case-card: #fff;
+  --case-text: #222;
+  --case-muted: #626b73;
+  --case-border: #e4e9ee;
+  background: var(--case-bg);
+  color: var(--case-text);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.8;
+}
+body.portfolio-case .navbar { padding: 20px 6%; }
+body.portfolio-case .navbar nav { display: flex; align-items: center; flex-wrap: wrap; gap: 28px; }
+body.portfolio-case .navbar nav a { margin-left: 0; font-family: inherit; color: var(--case-text); }
+body.portfolio-case .case-study { width: min(1100px, 88%); margin: 0 auto; padding: 0 0 100px; }
+body.portfolio-case .case-study > .project-hero {
+  max-width: none; margin: 0; padding: 85px 0 60px;
+  border-bottom: 1px solid var(--case-border); border-top: 0;
+}
+body.portfolio-case .case-study .project-hero h1 {
+  max-width: 950px; margin: 0 0 24px;
+  font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.16;
+  letter-spacing: -.04em; font-weight: 800;
+}
+body.portfolio-case .case-study .project-hero h1 a { color: var(--case-accent-dark); text-decoration: none; }
+body.portfolio-case .case-study .project-hero h1 a:hover { text-decoration: underline; }
+body.portfolio-case .case-study .project-hero .project-subtitle,
+body.portfolio-case .case-study .project-hero .hero-description {
+  max-width: 780px; margin: 0 0 26px; color: var(--case-muted);
+  font-size: 1.1rem; line-height: 1.9; display: block;
+}
+body.portfolio-case .case-study .eyebrow {
+  display: block; margin: 18px 0 27px; padding: 0;
+  color: var(--case-accent-dark); font-size: .82rem;
+  line-height: 1.8; font-weight: 700; letter-spacing: .075em;
+  text-transform: none;
+  margin: 0 0 16px;
+            color: var(--case-accent);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+}
+body.portfolio-case .case-study .personal-label {
+  display: inline-block; margin: 0 0 28px; padding: 7px 14px;
+  border: 1px solid #f0d5e1; border-radius: 30px;
+  background: var(--case-pink); color: #80445e; font-size: .88rem; font-weight: 600;
+}
+body.portfolio-case .case-study .project-tags {
+  display: flex; flex-wrap: wrap; gap: 10px; margin: 25px 0 35px;
+}
+body.portfolio-case .case-study .project-tags span {
+  display: inline-block; padding: 7px 13px; border-radius: 30px;
+  background: var(--case-accent-soft); border: 1px solid #cdeced;
+  color: var(--case-accent-dark); font-size: .83rem; font-weight: 600; line-height: 1.5;
+}
+body.portfolio-case .case-study .project-meta {
+  display: grid; grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 18px 30px; margin-top: 30px; padding: 0; border: 0;
+}
+body.portfolio-case .case-study .meta-item { min-width: 0; padding-left: 16px; border-left: 3px solid var(--case-pink); }
+body.portfolio-case .case-study .meta-item > strong,
+body.portfolio-case .case-study .meta-item > .meta-label {
+  display: block; margin: 0 0 3px; color: var(--case-muted);
+  font-size: .8rem; letter-spacing: .07em; text-transform: uppercase;
+}
+body.portfolio-case .case-study .meta-item > p,
+body.portfolio-case .case-study .meta-item > .meta-value {
+  display: block; margin: 0; color: var(--case-text); font-size: .95rem; font-weight: 600;
+}
+body.portfolio-case .case-study > .case-section {
+  width: auto; max-width: none; margin: 80px 0 0; padding: 0;
+  border: 0; scroll-margin-top: 100px;
+}
+body.portfolio-case .case-study > .case-section + .case-section {
+  border-top: 0; padding-top: 0;
+}
+body.portfolio-case .case-study .section-number {
+  display: block; margin: 0 0 8px; color: var(--case-accent-dark);
+  font-size: .82rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+}
+body.portfolio-case .case-study .case-section h2 {
+  margin: 0 0 28px; padding: 0 0 0 18px;
+  border-left: 4px solid var(--case-accent);
+  color: var(--case-text); font-size: clamp(1.65rem,3vw,2.15rem);
+  font-weight: 800; line-height: 1.3; letter-spacing: -.025em;
+}
+body.portfolio-case .case-study .case-section h3 {
+  margin: 35px 0 14px; color: var(--case-text); font-size: 1.35rem; line-height: 1.45;
+}
+body.portfolio-case .case-study .case-section h4 { margin: 28px 0 14px; font-size: 1.12rem; }
+body.portfolio-case .case-study .case-section p,
+body.portfolio-case .case-study .case-section li {
+  color: #4e5963; font-size: 1rem; line-height: 1.9;
+}
+body.portfolio-case .case-study .case-section p { margin: 0 0 22px; max-width: none; }
+body.portfolio-case .case-study .case-section ul,
+body.portfolio-case .case-study .case-section ol { margin: 16px 0 26px; padding-left: 25px; }
+body.portfolio-case .case-study .case-section a { color: var(--case-accent-dark); text-underline-offset: 4px; }
+body.portfolio-case .case-study .case-image,
+body.portfolio-case .case-study .case-section img {
+  display: block; max-width: 100%; width: auto; height: auto;
+  margin: 24px auto 32px; border-radius: 12px;
+  background: #fff; border: 1px solid var(--case-border);
+  box-shadow: 0 8px 28px rgba(30,50,70,.06);
+}
+
+
+
+body.portfolio-case .case-study .case-section img[width] { max-width: 100%; }
+body.portfolio-case .case-study .case-section figure { margin: 22px 0 32px; }
+body.portfolio-case .case-study .case-section figure img { margin-bottom: 10px; }
+body.portfolio-case .case-study .case-section figcaption { font-size: .9rem; color: var(--case-muted); text-align: center; }
+body.portfolio-case .case-study .case-section embed,
+body.portfolio-case .case-study .case-section iframe { display: block; max-width: 100%; width: 100%; border: 1px solid var(--case-border); border-radius: 12px; }
+body.portfolio-case .case-study .case-section .overview-grid,
+body.portfolio-case .case-study .case-section .position-grid,
+body.portfolio-case .case-study .case-section .image-grid { max-width: 100%; }
+body.portfolio-case .case-study .case-section .overview-grid > div,
+body.portfolio-case .case-study .case-section .position-grid > article { margin-bottom: 0; }
+body.portfolio-case .case-study .case-section .soft-card {
+  padding: 24px; border: 1px solid var(--case-border); border-radius: 14px; background: #fff;
+}
+body.portfolio-case .case-study .case-section .project-callout {
+  padding: 22px 26px; background: var(--case-accent-soft);
+  border: 1px solid #cdeced; border-radius: 14px;
+}
+body.portfolio-case .case-study .case-section .project-callout h2 { margin-bottom: 12px; }
+body.portfolio-case .case-study .case-section .project-callout p:last-child { margin-bottom: 0; }
+body.portfolio-case .case-study .case-section .document-preview { margin-top: 26px; }
+body.portfolio-case .case-study .case-section .document-preview embed { min-height: 520px; }
+body.portfolio-case .case-study .case-section .external-project-link { font-weight: 700; }
+@media (max-width: 700px) {
+  body.portfolio-case .case-study { width: 90%; }
+  body.portfolio-case .case-study > .project-hero { padding: 55px 0 42px; }
+  body.portfolio-case .case-study > .case-section { margin-top: 62px; }
+  body.portfolio-case .case-study .project-meta { grid-template-columns: 1fr; }
+  body.portfolio-case .case-study .case-section h2 { padding-left: 14px; }
+  body.portfolio-case .case-study .case-section .document-preview embed { min-height: 380px; }
 }
