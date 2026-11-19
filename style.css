@@ -1754,3 +1754,840 @@ body.portfolio-case .case-study .case-section .external-project-link { font-weig
   body.portfolio-case .case-study .case-section h2 { padding-left: 14px; }
   body.portfolio-case .case-study .case-section .document-preview embed { min-height: 380px; }
 }
+
+
+/* ==========================================================
+   HOMEPAGE FIXES
+   Project card images + Let's Connect section
+
+   Safe, homepage-specific overrides.
+   Paste at the VERY END of style.css.
+   ========================================================== */
+
+
+/* ----------------------------------------------------------
+   FIX 1: RESTORE ORIGINAL PROJECT CARD IMAGE FIT
+   ---------------------------------------------------------- */
+
+/* Keep every preview image inside its original 200px area */
+body.light-mode .projects-section
+.projects-grid .image-zoom-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background-color: #f1f3f5;
+    padding: 0;
+    margin: 0;
+}
+
+/* Restore original image dimensions and cropping */
+body.light-mode .projects-section
+.projects-grid .image-zoom-container img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    object-position: center;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+    transition: transform 0.4s
+        cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Keep the original image zoom-on-hover effect */
+body.light-mode .projects-section
+.projects-grid .project-card:hover
+.image-zoom-container img {
+    transform: scale(1.12);
+}
+
+
+/* ----------------------------------------------------------
+   FIX 2: RESTORE LET'S CONNECT SECTION
+   ---------------------------------------------------------- */
+
+/* Clean white contact section */
+body.light-mode #contact.contact-section {
+    background: #ffffff;
+    background-image: none;
+    color: #222222;
+
+    max-width: 1120px;
+    width: calc(100% - 40px);
+
+    margin: 40px auto 60px;
+    padding: 40px 45px;
+
+    border: 4px dashed #000000;
+    border-radius: 12px;
+
+    box-shadow: none;
+    text-align: center;
+}
+
+/* Remove unexpected inherited block styling */
+body.light-mode #contact .section-heading {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0 0 20px;
+}
+
+/* Restore heading appearance */
+body.light-mode #contact h2 {
+    color: #222222;
+    background: transparent;
+
+    font-family: "VT323", monospace;
+    font-size: clamp(1.65rem, 3vw, 2.2rem);
+    font-weight: 800;
+
+    border: none;
+    padding: 0;
+    margin: 0 0 20px;
+
+    text-align: center;
+}
+
+/* Keep the contact links neatly aligned */
+body.light-mode #contact .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+
+    background: transparent;
+    border: none;
+    box-shadow: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+/* Restore simple turquoise text links */
+body.light-mode #contact .contact-links a {
+    display: inline-block;
+
+    color: #008c95;
+    background: transparent;
+
+    font-family: "VT323", monospace;
+    font-size: 1.1rem;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+/* Pink hover to match your portfolio theme */
+body.light-mode #contact .contact-links a:hover {
+    color: #d9006c;
+    background: transparent;
+    text-decoration: underline;
+}
+
+
+/* ----------------------------------------------------------
+   MOBILE ADJUSTMENTS
+   ---------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+    body.light-mode #contact.contact-section {
+        width: calc(100% - 30px);
+        padding: 30px 20px;
+        margin: 30px auto 45px;
+    }
+
+    body.light-mode #contact .contact-links {
+        gap: 18px;
+    }
+}
+
+
+
+/* ==========================================================
+   HOMEPAGE RESTORATION — REVISED HERO & GABBY NAV
+
+   Wider introduction, less horizontal padding,
+   fixed typing area, compact description spacing,
+   and properly fitted Gabby Cat avatars.
+
+   Paste at the VERY END of style.css.
+   ========================================================== */
+
+
+/* 1. GIVE THE HERO MORE HORIZONTAL SPACE */
+
+body.light-mode .hero-split-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    align-items: center;
+
+    gap: 24px;
+    padding: 40px 4%;
+
+    background-color: #f8fafc;
+}
+
+
+/* 2. LEFT INTRODUCTION */
+
+body.light-mode .hero-split-container .hero-left-intro {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 3. KEEP PHOTO AND TITLE IN STABLE POSITIONS */
+
+body.light-mode .hero-split-container .hero-title-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 100%;
+    min-width: 0;
+
+    gap: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+body.light-mode .hero-split-container
+.hero-title-row .hero-image {
+    display: block;
+
+    width: 95px !important;
+    height: 95px !important;
+    min-width: 95px;
+
+    flex: 0 0 95px;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 50%;
+
+    margin: 0 !important;
+    padding: 0;
+
+    border: none;
+    box-shadow: none;
+}
+
+
+/* 4. RESERVE THE FULL WIDTH OF THE TYPING TITLE */
+
+body.light-mode .hero-split-container .split-hero-title {
+    display: block;
+
+    flex: 1 1 0;
+    min-width: 0;
+    width: auto;
+
+    margin: 0;
+    padding: 0;
+
+    text-align: left;
+    font-size: 1.6rem;
+    line-height: 1.15;
+
+    color: #222222;
+}
+
+
+/* The text's container keeps its full width.
+   The animation reveals characters without resizing
+   the photo/title row. */
+
+body.light-mode .hero-split-container
+.hero-left-intro .highlight {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+
+    font-family: "VT323", monospace;
+    font-size: clamp(16px, 1.55vw, 25px);
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 1.15;
+
+    color: #222222;
+
+    white-space: nowrap;
+    overflow: hidden;
+
+    border-right: none;
+
+    animation: none;
+}
+
+
+/* Typewriter effect using a character-reveal mask.
+   The full text width stays reserved at all times. */
+
+@supports (clip-path: inset(0 0 0 0)) {
+
+    body.light-mode .hero-split-container
+    .hero-left-intro .highlight {
+        animation: hero-text-reveal 15s steps(21, end) infinite;
+    }
+
+    @keyframes hero-text-reveal {
+        0%, 10% {
+            clip-path: inset(0 100% 0 0);
+        }
+
+        40%, 70% {
+            clip-path: inset(0 0 0 0);
+        }
+
+        90%, 100% {
+            clip-path: inset(0 100% 0 0);
+        }
+    }
+}
+
+
+/* 5. COMPACT INTRODUCTION PARAGRAPH */
+
+body.light-mode .hero-split-container
+.hero-left-intro > div {
+    margin: 0;
+    padding: 0;
+}
+
+body.light-mode .hero-split-container
+.hero-split-description {
+    display: block;
+
+    width: 100%;
+    max-width: none;
+
+    margin: 0 !important;
+    padding: 0;
+
+    color: #000000;
+    font-size: 1rem;
+    line-height: 1.4;
+    letter-spacing: normal;
+
+    text-align: left;
+}
+
+body.light-mode .hero-split-container
+.hero-left-intro p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+
+/* 6. GABBY NAVIGATION FIT */
+
+body.light-mode .hero-split-container .split-nav-box {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+
+    margin: 0 !important;
+    padding: 18px 12px !important;
+}
+
+body.light-mode .hero-split-container .gabby-nav-container {
+    background: #ffffff;
+    border: 4px dashed #d5e9eb;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(255, 0, 127, 0.08);
+}
+
+body.light-mode .hero-split-container .gabby-nav-title {
+    color: #000000;
+
+    font-family: "VT323", monospace;
+    font-size: 1.1rem;
+    font-weight: 800;
+    line-height: 1.3;
+
+    text-align: center;
+    margin: 0 0 16px;
+    padding: 0;
+}
+
+body.light-mode .hero-split-container
+.gabby-character-menu.horizontal-menu {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+
+    justify-content: space-around !important;
+    align-items: flex-start !important;
+
+    gap: 3px !important;
+    margin: 0;
+    padding: 0;
+}
+
+body.light-mode .hero-split-container
+.gabby-nav-item.compact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    flex: 1 1 0;
+    min-width: 0;
+
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Restore circular avatar dimensions */
+
+body.light-mode .hero-split-container
+.character-avatar-wrapper.compact-avatar {
+    width: 65px !important;
+    height: 65px !important;
+
+    min-width: 65px;
+    min-height: 65px;
+
+    flex: 0 0 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    margin: 0;
+
+    overflow: hidden;
+    border-radius: 50%;
+
+    background: #f1f3f5;
+    border: 3px solid #d8dce1;
+}
+
+
+/* Prevent general section image CSS from
+   overriding the original Gabby Cat sizing */
+
+body.light-mode .hero-split-container
+.character-avatar-wrapper .gabby-avatar {
+    display: block;
+
+    width: 85% !important;
+    height: 85% !important;
+
+    max-width: 85%;
+    max-height: 85%;
+
+    object-fit: contain;
+    object-position: center;
+
+    margin: 0 !important;
+    padding: 0;
+
+    border: none;
+    border-radius: 0;
+
+    background: transparent;
+    box-shadow: none;
+}
+
+
+/* Labels */
+
+body.light-mode .hero-split-container
+.gabby-nav-item span[class^="gabby-label"] {
+    display: block;
+    width: 100%;
+
+    font-family: "VT323", monospace;
+    font-size: 0.95rem;
+    font-weight: bold;
+    line-height: 1.35;
+
+    white-space: normal;
+    text-align: center;
+
+    margin-top: 12px;
+    padding: 0;
+}
+
+
+/* Navigation arrows */
+
+body.light-mode .hero-split-container
+.gabby-horizontal-arrow {
+    display: flex;
+
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+
+    color: #000000;
+    font-size: 16px;
+    font-weight: bold;
+
+    margin: 22px 0 0 !important;
+    padding: 0;
+}
+
+
+/* 7. RESPONSIVE LAYOUT */
+
+@media (max-width: 1050px) {
+
+    body.light-mode .hero-split-container {
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+        padding: 32px 5%;
+    }
+
+    body.light-mode .hero-split-container .hero-left-intro,
+    body.light-mode .hero-split-container .split-nav-box {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    body.light-mode .hero-split-container
+    .hero-left-intro .highlight {
+        font-size: clamp(20px, 3vw, 25px);
+    }
+}
+
+@media (max-width: 480px) {
+
+    body.light-mode .hero-split-container
+    .hero-title-row .hero-image {
+        width: 75px !important;
+        height: 75px !important;
+        min-width: 75px;
+        flex-basis: 75px;
+    }
+
+    body.light-mode .hero-split-container
+    .hero-left-intro .highlight {
+        font-size: clamp(14px, 4vw, 20px);
+        letter-spacing: 0;
+    }
+
+    body.light-mode .hero-split-container
+    .character-avatar-wrapper.compact-avatar {
+        width: 52px !important;
+        height: 52px !important;
+        min-width: 52px;
+        min-height: 52px;
+        flex-basis: 52px;
+    }
+
+    body.light-mode .hero-split-container
+    .gabby-nav-item span[class^="gabby-label"] {
+        font-size: 0.75rem;
+    }
+}
+
+
+/* 8. ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+
+    body.light-mode .hero-split-container
+    .hero-left-intro .highlight {
+        animation: none;
+        clip-path: none;
+    }
+}
+
+
+
+/* ==========================================================
+   HERO FINAL ADJUSTMENTS
+   Pixelated typing cursor + responsive proportions
+   ========================================================== */
+
+
+/* 1. RELATIVE HERO LAYOUT
+
+   Give the introduction more room while keeping
+   the Gabby navigation beside it.
+
+   1.35fr : 1fr means:
+   ~57% introduction / ~43% navigation.
+
+   The columns automatically adapt to available space.
+*/
+
+body.light-mode .hero-split-container {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.35fr)
+        minmax(0, 1fr);
+
+    gap: clamp(0.5rem, 1.5vw, 1.5rem);
+
+    padding:
+        2.5rem
+        3%;
+
+    align-items: center;
+}
+
+
+/* 2. ALLOW THE INTRODUCTION TO USE ITS FULL COLUMN */
+
+body.light-mode .hero-split-container
+.hero-left-intro {
+
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+
+    gap: 8px;
+}
+
+
+/* 3. STABLE TITLE ROW
+
+   The photo stays stationary while the typing
+   animation plays.
+*/
+
+body.light-mode .hero-split-container
+.hero-title-row {
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 100%;
+    min-width: 0;
+
+    gap: 0.75rem;
+}
+
+
+/* 4. FULL-WIDTH TYPING AREA */
+
+body.light-mode .hero-split-container
+.split-hero-title {
+
+    display: block;
+
+    flex: 1 1 0;
+    min-width: 0;
+
+    margin: 0;
+    padding: 0;
+
+    text-align: left;
+    line-height: 1.15;
+}
+
+
+/* 5. RESTORE PIXELATED TYPING CURSOR
+
+   The cursor is drawn using a dotted border.
+   Unlike the old width animation, the text
+   container remains stationary.
+
+   The animation reveals text using clip-path.
+*/
+
+body.light-mode .hero-split-container
+.hero-left-intro .highlight {
+
+    display: block;
+
+    width: max-content;
+    max-width: 100%;
+
+    font-family: "VT323", monospace;
+
+    font-size: clamp(1rem, 1.8vw, 1.65rem);
+    font-weight: bold;
+
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    color: #222222;
+
+    border-right: 3px dotted #222222;
+
+    animation:
+        hero-typewriter-cursor 15s steps(21, end) infinite,
+        hero-cursor-blink 0.75s step-end infinite;
+}
+
+
+/* The text reveal also moves the cursor's visible edge.
+   The title row itself does not change size. */
+
+@keyframes hero-typewriter-cursor {
+
+    0%, 10% {
+        clip-path: inset(0 100% 0 0);
+    }
+
+    40%, 70% {
+        clip-path: inset(0 0 0 0);
+    }
+
+    90%, 100% {
+        clip-path: inset(0 100% 0 0);
+    }
+}
+
+
+/* Blinking pixel-style cursor */
+
+@keyframes hero-cursor-blink {
+
+    0%, 49% {
+        border-right-color: #222222;
+    }
+
+    50%, 100% {
+        border-right-color: transparent;
+    }
+}
+
+
+/* 6. GABBY NAV REMAINS FLEXIBLE */
+
+body.light-mode .hero-split-container
+.split-nav-box {
+
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+}
+
+
+/* 7. RESPONSIVENESS
+
+   Stack the sections on smaller screens instead
+   of shrinking them until the text clips.
+*/
+
+@media (max-width: 1050px) {
+
+    body.light-mode .hero-split-container {
+
+        grid-template-columns: minmax(0, 1fr);
+
+        gap: 1.75rem;
+
+        padding: 2rem 5%;
+    }
+
+    body.light-mode .hero-split-container
+    .hero-left-intro .highlight {
+
+        font-size: clamp(1rem, 3vw, 1.65rem);
+    }
+}
+
+
+/* 8. ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+
+    body.light-mode .hero-split-container
+    .hero-left-intro .highlight {
+
+        animation: none;
+
+        clip-path: none;
+
+        border-right: none;
+    }
+}
+
+
+/* ==========================================================
+   GABBY NAVIGATION — PREVENT WORD BREAKING
+   ========================================================== */
+
+/* Keep words intact while allowing natural line wrapping */
+
+body.light-mode .hero-split-container
+.gabby-nav-item span[class^="gabby-label"] {
+
+    white-space: normal !important;
+
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    hyphens: none !important;
+
+    /* Prevent letters from being split across lines */
+    word-wrap: normal !important;
+
+    /* Allow labels to use their available column width */
+    width: 100%;
+    max-width: none;
+
+    text-align: center;
+
+    line-height: 1.35;
+}
+
+
+/* Allow each character's column to grow as needed */
+
+body.light-mode .hero-split-container
+.gabby-nav-item.compact-item {
+
+    flex: 1 1 0;
+    min-width: 0;
+
+    max-width: none !important;
+}
+
+
+/* Keep navigation items evenly distributed */
+
+body.light-mode .hero-split-container
+.gabby-character-menu.horizontal-menu {
+
+    display: flex !important;
+    flex-direction: row !important;
+
+    justify-content: space-around !important;
+    align-items: flex-start !important;
+
+    gap: 4px !important;
+}
