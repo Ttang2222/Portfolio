@@ -157,6 +157,119 @@
                 max-height: 420px;
             }
         }
+
+
+/* ==========================================================
+   THREE WAYS TO READ — UNIFORM CARD LAYOUT
+   ========================================================== */
+
+/* Make all three cards equal-height columns */
+body.portfolio-case .position-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    align-items: stretch;
+}
+
+/* Every card occupies the same overall height */
+body.portfolio-case .position-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 14px;
+}
+
+/* Identical image area across all three cards */
+body.portfolio-case .position-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    flex-shrink: 0;
+
+    padding: 0;
+    margin: 0;
+
+    overflow: hidden;
+    background: #f1f5f7;
+}
+
+/* Crop images to fill the same rectangle */
+body.portfolio-case .position-image img {
+    display: block;
+
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+
+    object-fit: cover !important;
+    object-position: center center;
+
+    margin: 0 !important;
+    padding: 0;
+
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Give every description area matching dimensions */
+body.portfolio-case .position-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    width: 100%;
+    min-height: 230px;
+
+    padding: 20px;
+    margin: 0;
+
+    background: #ffffff;
+}
+
+/* Consistent position label spacing */
+body.portfolio-case .position-label {
+    margin: 0 0 8px;
+    line-height: 1.4;
+}
+
+/* Consistent title spacing */
+body.portfolio-case .position-content h3 {
+    margin: 0 0 12px;
+    line-height: 1.4;
+}
+
+/* Keep paragraph spacing predictable */
+body.portfolio-case .position-content p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+/* Position 2 recommendation sits at the bottom */
+body.portfolio-case .position-content
+.recommendation-label {
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+/* On smaller screens, stack cards vertically */
+@media (max-width: 760px) {
+    body.portfolio-case .position-grid {
+        grid-template-columns: 1fr;
+    }
+
+    body.portfolio-case .position-image {
+        aspect-ratio: 4 / 3;
+    }
+
+    body.portfolio-case .position-content {
+        min-height: 0;
+    }
+}
+
+        
     </style>
 </head>
 
